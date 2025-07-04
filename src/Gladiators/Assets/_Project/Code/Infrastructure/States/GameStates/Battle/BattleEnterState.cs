@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
-using Factory.Gameplay.Levels;
+using Gladiators.Gameplay.Levels;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class BattleEnterState : IState
     {

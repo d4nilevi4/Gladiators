@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Factory.Common.CommonComponents.SelfDestructTimer selfDestructTimer { get { return (Factory.Common.CommonComponents.SelfDestructTimer)GetComponent(GameComponentsLookup.SelfDestructTimer); } }
+    public Gladiators.Common.CommonComponents.SelfDestructTimer selfDestructTimer { get { return (Gladiators.Common.CommonComponents.SelfDestructTimer)GetComponent(GameComponentsLookup.SelfDestructTimer); } }
     public float SelfDestructTimer { get { return selfDestructTimer.Value; } }
     public bool hasSelfDestructTimer { get { return HasComponent(GameComponentsLookup.SelfDestructTimer); } }
 
     public GameEntity AddSelfDestructTimer(float newValue) {
         var index = GameComponentsLookup.SelfDestructTimer;
-        var component = (Factory.Common.CommonComponents.SelfDestructTimer)CreateComponent(index, typeof(Factory.Common.CommonComponents.SelfDestructTimer));
+        var component = (Gladiators.Common.CommonComponents.SelfDestructTimer)CreateComponent(index, typeof(Gladiators.Common.CommonComponents.SelfDestructTimer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSelfDestructTimer(float newValue) {
         var index = GameComponentsLookup.SelfDestructTimer;
-        var component = (Factory.Common.CommonComponents.SelfDestructTimer)CreateComponent(index, typeof(Factory.Common.CommonComponents.SelfDestructTimer));
+        var component = (Gladiators.Common.CommonComponents.SelfDestructTimer)CreateComponent(index, typeof(Gladiators.Common.CommonComponents.SelfDestructTimer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

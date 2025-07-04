@@ -43,7 +43,7 @@ public partial class GameEntity : IDestructedEntity { }
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Factory.Common.CommonComponents.Destructed destructedComponent = new Factory.Common.CommonComponents.Destructed();
+    static readonly Gladiators.Common.CommonComponents.Destructed destructedComponent = new Gladiators.Common.CommonComponents.Destructed();
 
     public bool isDestructed {
         get { return HasComponent(GameComponentsLookup.Destructed); }

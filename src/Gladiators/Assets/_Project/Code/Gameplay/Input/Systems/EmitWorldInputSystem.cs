@@ -1,6 +1,6 @@
 ﻿using Entitas;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     public class EmitWorldInputSystem : IExecuteSystem
     {

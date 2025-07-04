@@ -1,15 +1,15 @@
 using System;
 using Cysharp.Threading.Tasks;
-using Factory.Common;
-using Factory.Gameplay;
-using Factory.Gameplay.Cameras;
-using Factory.Gameplay.Input;
-using Factory.Gameplay.Levels;
-using Factory.Gameplay.StaticData;
+using Gladiators.Common;
+using Gladiators.Gameplay;
+using Gladiators.Gameplay.Cameras;
+using Gladiators.Gameplay.Input;
+using Gladiators.Gameplay.Levels;
+using Gladiators.Gameplay.StaticData;
 using UnityEngine;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class BootstrapInstaller : MonoInstaller, IInitializable, ICoroutineRunner, IDrawGizmoReceiver
     {

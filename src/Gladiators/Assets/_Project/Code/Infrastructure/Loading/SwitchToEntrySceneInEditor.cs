@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     // Has execution order to start before every other script
     public class SwitchToEntrySceneInEditor : MonoBehaviour

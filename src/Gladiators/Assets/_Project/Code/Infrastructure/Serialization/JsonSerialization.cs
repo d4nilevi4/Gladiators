@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public static class JsonSerialization
     {

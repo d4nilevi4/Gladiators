@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Entitas;
-using Factory.Gameplay;
+using Gladiators.Gameplay;
 
-namespace Factory.Common.Destruct
+namespace Gladiators.Common.Destruct
 {
     public class SelfDestructTimerSystem : IExecuteSystem
     {

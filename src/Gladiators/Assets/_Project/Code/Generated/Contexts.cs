@@ -65,7 +65,7 @@ public partial class Contexts {
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
             Id,
             game.GetGroup(GameMatcher.Id),
-            (e, c) => ((Factory.Gameplay.Id)c).Value));
+            (e, c) => ((Gladiators.Gameplay.Id)c).Value));
     }
 }
 

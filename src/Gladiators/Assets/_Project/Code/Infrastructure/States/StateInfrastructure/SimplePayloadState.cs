@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class SimplePayloadState<TPayload> : IPayloadState<TPayload>
     {

@@ -1,6 +1,6 @@
-﻿using Factory.Infrastructure;
+﻿using Gladiators.Infrastructure;
 
-namespace Factory.Common.Destruct
+namespace Gladiators.Common.Destruct
 {
     public class ProcessDestructedFeature : CustomFeature
     {

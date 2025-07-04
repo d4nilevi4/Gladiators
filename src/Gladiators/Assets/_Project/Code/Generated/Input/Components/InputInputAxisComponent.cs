@@ -33,13 +33,13 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    public Factory.Gameplay.Input.InputAxis inputAxis { get { return (Factory.Gameplay.Input.InputAxis)GetComponent(InputComponentsLookup.InputAxis); } }
+    public Gladiators.Gameplay.Input.InputAxis inputAxis { get { return (Gladiators.Gameplay.Input.InputAxis)GetComponent(InputComponentsLookup.InputAxis); } }
     public UnityEngine.Vector2 InputAxis { get { return inputAxis.Value; } }
     public bool hasInputAxis { get { return HasComponent(InputComponentsLookup.InputAxis); } }
 
     public InputEntity AddInputAxis(UnityEngine.Vector2 newValue) {
         var index = InputComponentsLookup.InputAxis;
-        var component = (Factory.Gameplay.Input.InputAxis)CreateComponent(index, typeof(Factory.Gameplay.Input.InputAxis));
+        var component = (Gladiators.Gameplay.Input.InputAxis)CreateComponent(index, typeof(Gladiators.Gameplay.Input.InputAxis));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class InputEntity {
 
     public InputEntity ReplaceInputAxis(UnityEngine.Vector2 newValue) {
         var index = InputComponentsLookup.InputAxis;
-        var component = (Factory.Gameplay.Input.InputAxis)CreateComponent(index, typeof(Factory.Gameplay.Input.InputAxis));
+        var component = (Gladiators.Gameplay.Input.InputAxis)CreateComponent(index, typeof(Gladiators.Gameplay.Input.InputAxis));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

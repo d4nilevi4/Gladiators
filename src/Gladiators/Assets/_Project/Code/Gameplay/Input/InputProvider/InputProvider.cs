@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Zenject;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     public class InputProvider : IInputProvider , IInitializable, IDisposable
     {

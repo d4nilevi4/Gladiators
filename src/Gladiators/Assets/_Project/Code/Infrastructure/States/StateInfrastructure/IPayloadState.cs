@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public interface IPayloadState<in TPayload> : IExitableState
     {

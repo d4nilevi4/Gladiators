@@ -1,7 +1,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Factory.Common.Destruct
+namespace Gladiators.Common.Destruct
 {
     public class CleanupGameDestructedViewSystem : ICleanupSystem
     {

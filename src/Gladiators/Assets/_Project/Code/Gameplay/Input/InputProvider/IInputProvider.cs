@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     public interface IInputProvider
     {

@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Factory.Common.CommonComponents.View view { get { return (Factory.Common.CommonComponents.View)GetComponent(GameComponentsLookup.View); } }
-    public Factory.Infrastructure.IEntityView View { get { return view.Value; } }
+    public Gladiators.Common.CommonComponents.View view { get { return (Gladiators.Common.CommonComponents.View)GetComponent(GameComponentsLookup.View); } }
+    public Gladiators.Infrastructure.IEntityView View { get { return view.Value; } }
     public bool hasView { get { return HasComponent(GameComponentsLookup.View); } }
 
-    public GameEntity AddView(Factory.Infrastructure.IEntityView newValue) {
+    public GameEntity AddView(Gladiators.Infrastructure.IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (Factory.Common.CommonComponents.View)CreateComponent(index, typeof(Factory.Common.CommonComponents.View));
+        var component = (Gladiators.Common.CommonComponents.View)CreateComponent(index, typeof(Gladiators.Common.CommonComponents.View));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceView(Factory.Infrastructure.IEntityView newValue) {
+    public GameEntity ReplaceView(Gladiators.Infrastructure.IEntityView newValue) {
         var index = GameComponentsLookup.View;
-        var component = (Factory.Common.CommonComponents.View)CreateComponent(index, typeof(Factory.Common.CommonComponents.View));
+        var component = (Gladiators.Common.CommonComponents.View)CreateComponent(index, typeof(Gladiators.Common.CommonComponents.View));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

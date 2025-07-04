@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public interface IEntityView
     {

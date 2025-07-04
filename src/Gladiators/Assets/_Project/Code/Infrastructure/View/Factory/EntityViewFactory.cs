@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class EntityViewFactory : IEntityViewFactory
     {

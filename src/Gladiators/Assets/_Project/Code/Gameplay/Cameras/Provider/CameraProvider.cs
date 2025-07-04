@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Factory.Gameplay.Cameras
+namespace Gladiators.Gameplay.Cameras
 {
     public class CameraProvider : ICameraProvider
     {

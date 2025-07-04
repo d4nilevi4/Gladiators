@@ -33,7 +33,7 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Factory.Gameplay.Input.WorldInput worldInputComponent = new Factory.Gameplay.Input.WorldInput();
+    static readonly Gladiators.Gameplay.Input.WorldInput worldInputComponent = new Gladiators.Gameplay.Input.WorldInput();
 
     public bool isWorldInput {
         get { return HasComponent(InputComponentsLookup.WorldInput); }

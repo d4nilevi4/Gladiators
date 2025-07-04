@@ -1,4 +1,4 @@
-﻿namespace Factory.Common.Entity
+﻿namespace Gladiators.Common.Entity
 {
     public static class CreateEntity
     {

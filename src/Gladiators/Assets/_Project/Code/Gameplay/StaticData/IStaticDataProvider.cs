@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace Factory.Gameplay.StaticData
+namespace Gladiators.Gameplay.StaticData
 {
     public interface IStaticDataProvider
     {

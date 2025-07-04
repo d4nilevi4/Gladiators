@@ -1,7 +1,7 @@
-using Factory.Common;
-using Factory.Gameplay;
+using Gladiators.Common;
+using Gladiators.Gameplay;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class BattleLoopState : EndOfFrameExitState, IFixedUpdatableState
     {

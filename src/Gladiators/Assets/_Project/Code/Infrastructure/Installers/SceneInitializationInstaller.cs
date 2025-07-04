@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class SceneInitializationInstaller : MonoInstaller
     {

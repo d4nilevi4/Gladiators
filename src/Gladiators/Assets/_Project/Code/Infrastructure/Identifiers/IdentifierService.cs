@@ -1,4 +1,4 @@
-﻿namespace Factory.Infrastructure
+﻿namespace Gladiators.Infrastructure
 {
     public class IdentifierService : IIdentifierService
     {

@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class LoadingMenuState : IState
     {

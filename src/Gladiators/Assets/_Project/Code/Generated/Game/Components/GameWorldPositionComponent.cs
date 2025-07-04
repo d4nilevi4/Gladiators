@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Factory.Gameplay.WorldPosition worldPosition { get { return (Factory.Gameplay.WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
+    public Gladiators.Gameplay.WorldPosition worldPosition { get { return (Gladiators.Gameplay.WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
     public UnityEngine.Vector3 WorldPosition { get { return worldPosition.Value; } }
     public bool hasWorldPosition { get { return HasComponent(GameComponentsLookup.WorldPosition); } }
 
     public GameEntity AddWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
-        var component = (Factory.Gameplay.WorldPosition)CreateComponent(index, typeof(Factory.Gameplay.WorldPosition));
+        var component = (Gladiators.Gameplay.WorldPosition)CreateComponent(index, typeof(Gladiators.Gameplay.WorldPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
-        var component = (Factory.Gameplay.WorldPosition)CreateComponent(index, typeof(Factory.Gameplay.WorldPosition));
+        var component = (Gladiators.Gameplay.WorldPosition)CreateComponent(index, typeof(Gladiators.Gameplay.WorldPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,8 +1,8 @@
-﻿using Factory.Common.Entity;
+﻿using Gladiators.Common.Entity;
 using UnityEngine;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class SelfInitializedEntityView : MonoBehaviour
     {

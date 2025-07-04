@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace Factory.Common.Entity
+namespace Gladiators.Common.Entity
 {
     public interface INamedEntity : IEntity
     {

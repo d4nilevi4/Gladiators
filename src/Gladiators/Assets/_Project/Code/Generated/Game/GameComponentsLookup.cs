@@ -33,14 +33,14 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Factory.Common.CommonComponents.Destructed),
-        typeof(Factory.Common.CommonComponents.SelfDestructTimer),
-        typeof(Factory.Common.CommonComponents.View),
-        typeof(Factory.Common.CommonComponents.ViewPath),
-        typeof(Factory.Common.CommonComponents.ViewPrefab),
-        typeof(Factory.Gameplay.Id),
-        typeof(Factory.Gameplay.PositionOffset),
-        typeof(Factory.Gameplay.TransformComponent),
-        typeof(Factory.Gameplay.WorldPosition)
+        typeof(Gladiators.Common.CommonComponents.Destructed),
+        typeof(Gladiators.Common.CommonComponents.SelfDestructTimer),
+        typeof(Gladiators.Common.CommonComponents.View),
+        typeof(Gladiators.Common.CommonComponents.ViewPath),
+        typeof(Gladiators.Common.CommonComponents.ViewPrefab),
+        typeof(Gladiators.Gameplay.Id),
+        typeof(Gladiators.Gameplay.PositionOffset),
+        typeof(Gladiators.Gameplay.TransformComponent),
+        typeof(Gladiators.Gameplay.WorldPosition)
     };
 }

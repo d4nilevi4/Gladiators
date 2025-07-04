@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
-using Factory.Infrastructure;
+using Gladiators.Infrastructure;
 
-namespace Factory.Gameplay.StaticData
+namespace Gladiators.Gameplay.StaticData
 {
     public class StaticDataProvider : IStaticDataProvider
     {

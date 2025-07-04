@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Factory.Gameplay.PositionOffset positionOffset { get { return (Factory.Gameplay.PositionOffset)GetComponent(GameComponentsLookup.PositionOffset); } }
+    public Gladiators.Gameplay.PositionOffset positionOffset { get { return (Gladiators.Gameplay.PositionOffset)GetComponent(GameComponentsLookup.PositionOffset); } }
     public UnityEngine.Vector3 PositionOffset { get { return positionOffset.Value; } }
     public bool hasPositionOffset { get { return HasComponent(GameComponentsLookup.PositionOffset); } }
 
     public GameEntity AddPositionOffset(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.PositionOffset;
-        var component = (Factory.Gameplay.PositionOffset)CreateComponent(index, typeof(Factory.Gameplay.PositionOffset));
+        var component = (Gladiators.Gameplay.PositionOffset)CreateComponent(index, typeof(Gladiators.Gameplay.PositionOffset));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePositionOffset(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.PositionOffset;
-        var component = (Factory.Gameplay.PositionOffset)CreateComponent(index, typeof(Factory.Gameplay.PositionOffset));
+        var component = (Gladiators.Gameplay.PositionOffset)CreateComponent(index, typeof(Gladiators.Gameplay.PositionOffset));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

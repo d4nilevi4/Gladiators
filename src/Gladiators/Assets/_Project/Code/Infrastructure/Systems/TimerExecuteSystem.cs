@@ -1,7 +1,7 @@
 using Entitas;
-using Factory.Gameplay;
+using Gladiators.Gameplay;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public abstract class TimerExecuteSystem : IExecuteSystem
     {

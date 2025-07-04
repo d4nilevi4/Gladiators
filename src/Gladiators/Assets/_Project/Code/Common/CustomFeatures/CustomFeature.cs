@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-namespace Factory.Common
+namespace Gladiators.Common
 {
     public class CustomFeature : Feature, IDrawGizmoSystem, IFixedExecuteSystem
     {

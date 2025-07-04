@@ -33,7 +33,7 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    static readonly Factory.Gameplay.Input.CameraRelativeInput cameraRelativeInputComponent = new Factory.Gameplay.Input.CameraRelativeInput();
+    static readonly Gladiators.Gameplay.Input.CameraRelativeInput cameraRelativeInputComponent = new Gladiators.Gameplay.Input.CameraRelativeInput();
 
     public bool isCameraRelativeInput {
         get { return HasComponent(InputComponentsLookup.CameraRelativeInput); }

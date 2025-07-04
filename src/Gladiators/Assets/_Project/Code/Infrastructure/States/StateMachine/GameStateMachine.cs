@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class GameStateMachine : IGameStateMachine, ITickable, IFixedTickable
     {

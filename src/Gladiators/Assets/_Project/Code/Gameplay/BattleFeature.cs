@@ -1,8 +1,8 @@
-﻿using Factory.Common;
-using Factory.Gameplay.Input;
-using Factory.Infrastructure;
+﻿using Gladiators.Common;
+using Gladiators.Gameplay.Input;
+using Gladiators.Infrastructure;
 
-namespace Factory.Gameplay
+namespace Gladiators.Gameplay
 {
     public class BattleFeature : CustomFeature
     {

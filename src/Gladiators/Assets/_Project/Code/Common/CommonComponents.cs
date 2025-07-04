@@ -1,7 +1,7 @@
 ﻿using Entitas;
-using Factory.Infrastructure;
+using Gladiators.Infrastructure;
 
-namespace Factory.Common
+namespace Gladiators.Common
 {
     public class CommonComponents
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class BindEntityViewFromPrefab : IExecuteSystem
     {

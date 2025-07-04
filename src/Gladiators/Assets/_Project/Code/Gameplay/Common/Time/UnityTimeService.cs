@@ -1,6 +1,6 @@
 using System;
 
-namespace Factory.Gameplay
+namespace Gladiators.Gameplay
 {
     public class UnityTimeService : ITimeService
     {

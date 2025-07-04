@@ -3,7 +3,7 @@ using System.Text;
 using DesperateDevs.Extensions;
 using Entitas;
 
-namespace Factory.Common.Entity
+namespace Gladiators.Common.Entity
 {
     public class EntityPrinter
     {

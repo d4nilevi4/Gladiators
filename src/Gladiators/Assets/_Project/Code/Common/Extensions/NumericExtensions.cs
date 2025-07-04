@@ -1,4 +1,4 @@
-﻿namespace Factory.Common
+﻿namespace Gladiators.Common
 {
     public static class NumericExtensions
     {

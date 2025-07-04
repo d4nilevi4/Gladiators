@@ -1,9 +1,9 @@
-using Factory.Gameplay.Cameras;
-using Factory.Gameplay.Levels;
+using Gladiators.Gameplay.Cameras;
+using Gladiators.Gameplay.Levels;
 using UnityEngine;
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class LevelInitializer : MonoBehaviour
     {

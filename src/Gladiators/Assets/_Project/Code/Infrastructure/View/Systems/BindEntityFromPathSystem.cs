@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using Entitas;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class BindEntityFromPathSystem : IExecuteSystem
     {

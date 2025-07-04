@@ -25,10 +25,10 @@ public static class InputComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Factory.Common.CommonComponents.Destructed),
-        typeof(Factory.Gameplay.Input.CameraRelativeInput),
-        typeof(Factory.Gameplay.Input.Input),
-        typeof(Factory.Gameplay.Input.InputAxis),
-        typeof(Factory.Gameplay.Input.WorldInput)
+        typeof(Gladiators.Common.CommonComponents.Destructed),
+        typeof(Gladiators.Gameplay.Input.CameraRelativeInput),
+        typeof(Gladiators.Gameplay.Input.Input),
+        typeof(Gladiators.Gameplay.Input.InputAxis),
+        typeof(Gladiators.Gameplay.Input.WorldInput)
     };
 }

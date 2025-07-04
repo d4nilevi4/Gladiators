@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public interface ISystemFactory
     {

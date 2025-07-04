@@ -1,8 +1,8 @@
 using Entitas;
-using Factory.Common;
-using Factory.Common.Entity;
+using Gladiators.Common;
+using Gladiators.Common.Entity;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     public class InitializeInputSystem : IInitializeSystem
     {

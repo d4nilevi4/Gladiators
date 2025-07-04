@@ -1,8 +1,8 @@
 using Entitas;
-using Factory.Gameplay.Cameras;
+using Gladiators.Gameplay.Cameras;
 using UnityEngine;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     public class EmitCameraRelativeInputSystem : IExecuteSystem
     {

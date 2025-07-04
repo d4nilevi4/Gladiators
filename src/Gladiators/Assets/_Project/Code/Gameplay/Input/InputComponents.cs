@@ -1,7 +1,7 @@
 ﻿using Entitas;
 using UnityEngine;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     [Input] public class Input : IComponent { }
     [Input] public class WorldInput : IComponent { }

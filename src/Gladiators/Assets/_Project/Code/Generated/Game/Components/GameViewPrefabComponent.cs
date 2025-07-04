@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Factory.Common.CommonComponents.ViewPrefab viewPrefab { get { return (Factory.Common.CommonComponents.ViewPrefab)GetComponent(GameComponentsLookup.ViewPrefab); } }
-    public Factory.Infrastructure.EntityBehaviour ViewPrefab { get { return viewPrefab.Value; } }
+    public Gladiators.Common.CommonComponents.ViewPrefab viewPrefab { get { return (Gladiators.Common.CommonComponents.ViewPrefab)GetComponent(GameComponentsLookup.ViewPrefab); } }
+    public Gladiators.Infrastructure.EntityBehaviour ViewPrefab { get { return viewPrefab.Value; } }
     public bool hasViewPrefab { get { return HasComponent(GameComponentsLookup.ViewPrefab); } }
 
-    public GameEntity AddViewPrefab(Factory.Infrastructure.EntityBehaviour newValue) {
+    public GameEntity AddViewPrefab(Gladiators.Infrastructure.EntityBehaviour newValue) {
         var index = GameComponentsLookup.ViewPrefab;
-        var component = (Factory.Common.CommonComponents.ViewPrefab)CreateComponent(index, typeof(Factory.Common.CommonComponents.ViewPrefab));
+        var component = (Gladiators.Common.CommonComponents.ViewPrefab)CreateComponent(index, typeof(Gladiators.Common.CommonComponents.ViewPrefab));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceViewPrefab(Factory.Infrastructure.EntityBehaviour newValue) {
+    public GameEntity ReplaceViewPrefab(Gladiators.Infrastructure.EntityBehaviour newValue) {
         var index = GameComponentsLookup.ViewPrefab;
-        var component = (Factory.Common.CommonComponents.ViewPrefab)CreateComponent(index, typeof(Factory.Common.CommonComponents.ViewPrefab));
+        var component = (Gladiators.Common.CommonComponents.ViewPrefab)CreateComponent(index, typeof(Gladiators.Common.CommonComponents.ViewPrefab));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

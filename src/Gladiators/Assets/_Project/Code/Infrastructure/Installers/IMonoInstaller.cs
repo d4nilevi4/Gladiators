@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public interface IMonoInstaller
     {

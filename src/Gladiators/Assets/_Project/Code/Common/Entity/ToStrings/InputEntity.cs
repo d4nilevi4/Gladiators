@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Entitas;
-using Factory.Common.Entity;
+using Gladiators.Common.Entity;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace

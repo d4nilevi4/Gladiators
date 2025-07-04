@@ -1,4 +1,4 @@
-﻿namespace Factory.Gameplay.Levels
+﻿namespace Gladiators.Gameplay.Levels
 {
     public interface ILevelDataProvider
     {

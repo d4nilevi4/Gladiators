@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Factory.Common
+namespace Gladiators.Common
 {
     public static class EnumerableExtensions
     {

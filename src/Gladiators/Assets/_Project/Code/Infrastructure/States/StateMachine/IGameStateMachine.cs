@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public interface IGameStateMachine
     {

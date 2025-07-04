@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class LoadProgressState : IState
     {

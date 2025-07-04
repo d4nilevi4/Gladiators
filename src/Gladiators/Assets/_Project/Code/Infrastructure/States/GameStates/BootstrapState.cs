@@ -1,7 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
-using Factory.Gameplay.StaticData;
+using Gladiators.Gameplay.StaticData;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public class BootstrapState : IState
     {

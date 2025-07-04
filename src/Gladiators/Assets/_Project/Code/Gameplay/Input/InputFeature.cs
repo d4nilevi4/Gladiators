@@ -1,7 +1,7 @@
-using Factory.Common;
-using Factory.Infrastructure;
+using Gladiators.Common;
+using Gladiators.Infrastructure;
 
-namespace Factory.Gameplay.Input
+namespace Gladiators.Gameplay.Input
 {
     public sealed class InputFeature : CustomFeature
     {

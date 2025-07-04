@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Factory.Common
+namespace Gladiators.Common
 {
     [Flags]
     public enum CollisionLayer

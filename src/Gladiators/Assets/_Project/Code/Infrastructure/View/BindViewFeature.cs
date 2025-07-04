@@ -1,6 +1,6 @@
-using Factory.Common;
+using Gladiators.Common;
 
-namespace Factory.Infrastructure
+namespace Gladiators.Infrastructure
 {
     public sealed class BindViewFeature : CustomFeature
     {

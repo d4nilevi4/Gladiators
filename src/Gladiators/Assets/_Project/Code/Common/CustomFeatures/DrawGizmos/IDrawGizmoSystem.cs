@@ -1,6 +1,6 @@
 using Entitas;
 
-namespace Factory.Common
+namespace Gladiators.Common
 {
     public interface IDrawGizmoSystem : ISystem
     {
