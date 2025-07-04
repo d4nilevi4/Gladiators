@@ -155,3 +155,4 @@ src/Gladiators/[Aa]ssets/[Ss]treamingAssets/aa/*
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider
 /src/Gladiators/Packages/com.arongranberg.astar
 /src/Gladiators/Assets/Plugins/Sirenix
+/src/Gladiators/Assets/Plugins/Wingman
