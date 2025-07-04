@@ -153,3 +153,4 @@ src/Gladiators/[Aa]ssets/[Ss]treamingAssets/aa.meta
 src/Gladiators/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider
+/src/Gladiators/Packages/com.arongranberg.astar
