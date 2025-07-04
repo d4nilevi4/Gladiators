@@ -8,7 +8,7 @@ namespace Gladiators.Gameplay.Input
     {
         private readonly PlayerInputActions _input = new();
 
-        public bool HasAxisInput => GetInputAxis().magnitude >= 0.1f;
+        public bool HasMovementInput => GetMovementInputAxis().sqrMagnitude >= 0.01f;
         
         public void Initialize() =>
             _input.Enable();
@@ -16,7 +16,7 @@ namespace Gladiators.Gameplay.Input
         public void Dispose() =>
             _input.Dispose();
 
-        public Vector2 GetInputAxis() => 
-            _input.Movement.InputAxis.ReadValue<Vector2>();
+        public Vector2 GetMovementInputAxis() => 
+            _input.Locomotion.Movement.ReadValue<Vector2>();
     }
 }

@@ -26,13 +26,13 @@ namespace Gladiators.Gameplay.Input
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Movement"",
-            ""id"": ""d2d427ef-7bff-4d4c-b13c-618c85cf9fc6"",
+            ""name"": ""Locomotion"",
+            ""id"": ""62e3f7ca-7449-4003-a9cc-f971171fc1e0"",
             ""actions"": [
                 {
-                    ""name"": ""InputAxis"",
+                    ""name"": ""Movement"",
                     ""type"": ""Value"",
-                    ""id"": ""70705b2b-2ddc-4c7f-adc1-d2d3e83efd5c"",
+                    ""id"": ""5498b1c5-013d-4f1f-a989-19cbaf28be60"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -42,56 +42,56 @@ namespace Gladiators.Gameplay.Input
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""024778ff-0c3f-4c50-81fd-e3dbcce10649"",
+                    ""id"": ""98ec304c-0b6c-44b2-8689-cc3a87f46893"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InputAxis"",
+                    ""action"": ""Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""2848a85c-e76d-45e0-8335-2fa7f39cbdc1"",
+                    ""id"": ""2dfcf604-16a0-428d-9f76-43f3c9b8a92a"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InputAxis"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""213f5bba-887f-4a13-89fa-2034a3fc4575"",
+                    ""id"": ""0fba0bee-4281-4a8f-b752-9e67793d2ec0"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InputAxis"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""967391ad-5fde-488c-85b9-20586ac7f2b8"",
+                    ""id"": ""9022abe3-ab17-4921-acdc-371f0aa0c5ff"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InputAxis"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""6b8192e1-5929-4735-bbe3-9ea8e983a40f"",
+                    ""id"": ""f61d3fd6-aa26-408c-805d-265a94c7cfbb"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""InputAxis"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -100,14 +100,14 @@ namespace Gladiators.Gameplay.Input
     ],
     ""controlSchemes"": []
 }");
-            // Movement
-            m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
-            m_Movement_InputAxis = m_Movement.FindAction("InputAxis", throwIfNotFound: true);
+            // Locomotion
+            m_Locomotion = asset.FindActionMap("Locomotion", throwIfNotFound: true);
+            m_Locomotion_Movement = m_Locomotion.FindAction("Movement", throwIfNotFound: true);
         }
 
         ~@PlayerInputActions()
         {
-            UnityEngine.Debug.Assert(!m_Movement.enabled, "This will cause a leak and performance issues, PlayerInputActions.Movement.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Locomotion.enabled, "This will cause a leak and performance issues, PlayerInputActions.Locomotion.Disable() has not been called.");
         }
 
         public void Dispose()
@@ -166,54 +166,54 @@ namespace Gladiators.Gameplay.Input
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // Movement
-        private readonly InputActionMap m_Movement;
-        private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
-        private readonly InputAction m_Movement_InputAxis;
-        public struct MovementActions
+        // Locomotion
+        private readonly InputActionMap m_Locomotion;
+        private List<ILocomotionActions> m_LocomotionActionsCallbackInterfaces = new List<ILocomotionActions>();
+        private readonly InputAction m_Locomotion_Movement;
+        public struct LocomotionActions
         {
             private @PlayerInputActions m_Wrapper;
-            public MovementActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @InputAxis => m_Wrapper.m_Movement_InputAxis;
-            public InputActionMap Get() { return m_Wrapper.m_Movement; }
+            public LocomotionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Movement => m_Wrapper.m_Locomotion_Movement;
+            public InputActionMap Get() { return m_Wrapper.m_Locomotion; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
-            public void AddCallbacks(IMovementActions instance)
+            public static implicit operator InputActionMap(LocomotionActions set) { return set.Get(); }
+            public void AddCallbacks(ILocomotionActions instance)
             {
-                if (instance == null || m_Wrapper.m_MovementActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_MovementActionsCallbackInterfaces.Add(instance);
-                @InputAxis.started += instance.OnInputAxis;
-                @InputAxis.performed += instance.OnInputAxis;
-                @InputAxis.canceled += instance.OnInputAxis;
+                if (instance == null || m_Wrapper.m_LocomotionActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_LocomotionActionsCallbackInterfaces.Add(instance);
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
             }
 
-            private void UnregisterCallbacks(IMovementActions instance)
+            private void UnregisterCallbacks(ILocomotionActions instance)
             {
-                @InputAxis.started -= instance.OnInputAxis;
-                @InputAxis.performed -= instance.OnInputAxis;
-                @InputAxis.canceled -= instance.OnInputAxis;
+                @Movement.started -= instance.OnMovement;
+                @Movement.performed -= instance.OnMovement;
+                @Movement.canceled -= instance.OnMovement;
             }
 
-            public void RemoveCallbacks(IMovementActions instance)
+            public void RemoveCallbacks(ILocomotionActions instance)
             {
-                if (m_Wrapper.m_MovementActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_LocomotionActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
-            public void SetCallbacks(IMovementActions instance)
+            public void SetCallbacks(ILocomotionActions instance)
             {
-                foreach (var item in m_Wrapper.m_MovementActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_LocomotionActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_MovementActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_LocomotionActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
-        public MovementActions @Movement => new MovementActions(this);
-        public interface IMovementActions
+        public LocomotionActions @Locomotion => new LocomotionActions(this);
+        public interface ILocomotionActions
         {
-            void OnInputAxis(InputAction.CallbackContext context);
+            void OnMovement(InputAction.CallbackContext context);
         }
     }
 }

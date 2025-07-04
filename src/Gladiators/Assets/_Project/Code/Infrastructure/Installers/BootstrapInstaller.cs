@@ -121,7 +121,7 @@ namespace Gladiators.Infrastructure
                     .Resolve<ILogger>()
                     .LogError(
                         tag: "¯\\_(ツ)_/¯", 
-                        message: $"Unobserved exception: {ex}");
+                        message: $"Unobserved exception: {ex.Message}\n{ex.StackTrace}");
             };
         }
     }

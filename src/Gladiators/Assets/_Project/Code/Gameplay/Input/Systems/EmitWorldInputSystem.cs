@@ -23,8 +23,8 @@ namespace Gladiators.Gameplay.Input
         {
             foreach (InputEntity input in _inputs)
             {
-                if (_inputProvider.HasAxisInput)
-                    input.ReplaceInputAxis(_inputProvider.GetInputAxis());
+                if (_inputProvider.HasMovementInput)
+                    input.ReplaceInputAxis(_inputProvider.GetMovementInputAxis());
                 else if (input.hasInputAxis)
                     input.RemoveInputAxis();
             }

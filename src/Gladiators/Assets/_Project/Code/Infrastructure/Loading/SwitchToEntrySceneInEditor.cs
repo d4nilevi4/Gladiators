@@ -1,13 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using Zenject;
+﻿using UnityEngine.SceneManagement;
 
 namespace Gladiators.Infrastructure
 {
     // Has execution order to start before every other script
     public class SwitchToEntrySceneInEditor : MonoBehaviour
     {
-#if LOAD_CURRENT_SCENE && UNITY_EDITOR
+#if UNITY_EDITOR
         public const string CURRENT_SCENE_NAME_KEY = "CurrentSceneNameKey"; 
         
         public bool LoadCurrentScene;

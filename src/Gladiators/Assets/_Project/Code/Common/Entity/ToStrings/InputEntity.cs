@@ -2,6 +2,7 @@
 using System.Linq;
 using Entitas;
 using Gladiators.Common.Entity;
+using Gladiators.Gameplay.Input;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
@@ -30,6 +31,10 @@ public sealed partial class InputEntity : INamedEntity
             {
                 switch (component.GetType().Name)
                 {
+                    case nameof(WorldInput): 
+                        return nameof(WorldInput);
+                    case nameof(CameraRelativeInput): 
+                        return nameof(CameraRelativeInput);
                 }
             }
         }

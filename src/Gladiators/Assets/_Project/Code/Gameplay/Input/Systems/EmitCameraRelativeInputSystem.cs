@@ -30,9 +30,9 @@ namespace Gladiators.Gameplay.Input
             
             foreach (InputEntity input in _inputs)
             {
-                if (_inputService.HasAxisInput)
+                if (_inputService.HasMovementInput)
                 {
-                    Vector2 worldInput = _inputService.GetInputAxis();
+                    Vector2 worldInput = _inputService.GetMovementInputAxis();
                     Vector3 forward = camera.transform.forward;
                     Vector3 right = camera.transform.right;
 
