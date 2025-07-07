@@ -10,6 +10,8 @@ namespace Gladiators.Gameplay.Buildings
         {
             Entity.isBuilding = true;
             Entity.AddBuildingTypeId(BuildingTypeIdMarker.BuildingTypeId);
+            Entity.isInteractable = true;
+            Entity.isShowBuildingWindowInteractable = true;
         }
 
         public override void UnregisterComponents()
@@ -17,6 +19,8 @@ namespace Gladiators.Gameplay.Buildings
             if (Entity.hasBuildingTypeId)
                 Entity.RemoveBuildingTypeId();
             Entity.isBuilding = false;
+            Entity.isInteractable = true;
+            Entity.isShowBuildingWindowInteractable = true;
         }
     }
 }
