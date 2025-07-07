@@ -1,3 +1,4 @@
+using Gladiators.Common;
 using Gladiators.Gameplay.Cameras;
 
 namespace Gladiators.Gameplay.Input;
@@ -45,9 +46,10 @@ public class InteractableRayCastHitSystem : IExecuteSystem
     private int UpdateHits()
     {
         Vector2 screenPos = UnityEngine.Input.mousePosition;
+        
         Ray ray = _cameraProvider.MainCamera.ScreenPointToRay(screenPos);
 
-        return Physics.RaycastNonAlloc(ray, _hits, float.MaxValue);
+        return Physics.RaycastNonAlloc(ray, _hits, float.MaxValue, CollisionLayer.Interactable.AsMask());
     }
 
     private bool HasCollides(int hitCount)

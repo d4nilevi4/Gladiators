@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7203248166209149068}
   - component: {fileID: 7666088147525823487}
   - component: {fileID: 7753158283733452758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '[Building] Base'
   m_TagString: Untagged
   m_Icon: {fileID: 0}

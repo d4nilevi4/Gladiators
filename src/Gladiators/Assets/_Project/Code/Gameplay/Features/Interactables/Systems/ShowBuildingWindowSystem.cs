@@ -1,17 +1,23 @@
-﻿namespace Gladiators.Gameplay.Interactables;
+﻿using Cysharp.Threading.Tasks;
+using Gladiators.UI.City;
+
+namespace Gladiators.Gameplay.Interactables;
 
 public class ShowBuildingWindowSystem : IExecuteSystem
 {
+    private readonly IBuildingWindowsController _buildingWindowsController;
     private readonly ICollisionRegistry _collisionRegistry;
     private readonly IGroup<GameEntity> _buildings;
     private readonly IGroup<InputEntity> _inputs;
 
     public ShowBuildingWindowSystem(
-        ICollisionRegistry collisionRegistry, 
+        IBuildingWindowsController buildingWindowsController, 
+        ICollisionRegistry collisionRegistry,
         InputContext input,
         GameContext game
         )
     {
+        _buildingWindowsController = buildingWindowsController;
         _collisionRegistry = collisionRegistry;
         _inputs = input.GetGroup(InputMatcher
             .AllOf(
@@ -28,13 +34,16 @@ public class ShowBuildingWindowSystem : IExecuteSystem
 
     public void Execute()
     {
+        if(!_buildingWindowsController.CanShowWindow)
+            return;
+        
         foreach (InputEntity input in _inputs)
         foreach (GameEntity building in _buildings)
         {
             if(building != _collisionRegistry.Get<GameEntity>(input.InteractedColliderId))
                 continue;
-
-            // TODO: Show building window
+            
+            _buildingWindowsController.ShowBuildingWindowAsync(building.BuildingTypeId).Forget();
         }
     }
 }

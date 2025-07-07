@@ -1,5 +1,6 @@
 ﻿using Gladiators.Common;
 using Gladiators.Gameplay.Input;
+using Gladiators.Gameplay.Interactables;
 using Gladiators.Infrastructure;
 
 namespace Gladiators.Gameplay
@@ -11,6 +12,8 @@ namespace Gladiators.Gameplay
         )
         {
             Add(systemFactory.Create<CityInputFeature>());
+            
+            Add(systemFactory.Create<InteractablesFeature>());
             
             Add(systemFactory.Create<BindViewFeature>());
         }

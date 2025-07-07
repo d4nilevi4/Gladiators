@@ -6,6 +6,8 @@ using Gladiators.Gameplay.Cameras;
 using Gladiators.Gameplay.Input;
 using Gladiators.Gameplay.Levels;
 using Gladiators.Gameplay.StaticData;
+using Gladiators.UI;
+using Gladiators.UI.City;
 using UnityEngine;
 using Zenject;
 
@@ -28,6 +30,8 @@ namespace Gladiators.Infrastructure
             BindGameStates();
             BindGameplayServices();
             BindGameplayFactories();
+            BindUIServices();
+            BindUIFactories();
             BindEntityIndices();
 
             Container.Bind<IInitializable>().FromInstance(this);
@@ -106,11 +110,23 @@ namespace Gladiators.Infrastructure
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
         }
 
+        private void BindUIServices()
+        {
+            Container.Bind<IBuildingWindowsController>().To<BuildingWindowsController>().AsSingle();
+            Container.Bind<IUIRootProvider>().To<UIRootProvider>().AsSingle();
+        }
+
+        private void BindUIFactories()
+        {
+            Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+            Container.Bind<ICityWindowViewFactory>().To<CityWindowViewFactory>().AsSingle();
+        }
+
         private void BindEntityIndices()
         {
             // Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
         }
-        
+
         private void OnDrawGizmos()
         {
             EventDrawGizmo?.Invoke();
