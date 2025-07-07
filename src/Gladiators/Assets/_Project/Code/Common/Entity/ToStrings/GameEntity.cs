@@ -49,9 +49,9 @@ public sealed partial class GameEntity : INamedEntity
     private string PrintBuilding()
     {
         return new StringBuilder()
-            .With(s => s.Append($"Id: {Id} "), when: hasId)
+            .With(s => s.Append($"{BuildingTypeId} "), when: hasBuildingTypeId)
             .Append("Building ")
-            .With(s => s.Append($"Type: {BuildingTypeId} "), when: hasBuildingTypeId)
+            .With(s => s.Append($"With Id: {Id} "), when: hasId)
             .ToString();
     }
 

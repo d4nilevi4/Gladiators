@@ -8,6 +8,7 @@ namespace Gladiators.Gameplay.Buildings
         
         public override void RegisterComponents()
         {
+            Entity.isBuilding = true;
             Entity.AddBuildingTypeId(BuildingTypeIdMarker.BuildingTypeId);
         }
 
@@ -15,6 +16,7 @@ namespace Gladiators.Gameplay.Buildings
         {
             if (Entity.hasBuildingTypeId)
                 Entity.RemoveBuildingTypeId();
+            Entity.isBuilding = false;
         }
     }
 }
