@@ -4,14 +4,14 @@ namespace Gladiators.Gameplay.Input
 {
     public class EmitWorldInputSystem : IExecuteSystem
     {
-        private readonly IInputProvider _inputProvider;
+        private readonly ILocomotionInput _locomotionInput;
         private readonly IGroup<InputEntity> _inputs;
 
         public EmitWorldInputSystem(
             InputContext input,
-            IInputProvider inputProvider)
+            ILocomotionInput locomotionInput)
         {
-            _inputProvider = inputProvider;
+            _locomotionInput = locomotionInput;
             
             _inputs = input.GetGroup(InputMatcher
                 .AllOf(
@@ -23,8 +23,8 @@ namespace Gladiators.Gameplay.Input
         {
             foreach (InputEntity input in _inputs)
             {
-                if (_inputProvider.HasMovementInput)
-                    input.ReplaceInputAxis(_inputProvider.GetMovementInputAxis());
+                if (_locomotionInput.HasMovementInput)
+                    input.ReplaceInputAxis(_locomotionInput.GetMovementInputAxis());
                 else if (input.hasInputAxis)
                     input.RemoveInputAxis();
             }

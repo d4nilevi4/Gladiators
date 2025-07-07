@@ -6,16 +6,16 @@ namespace Gladiators.Gameplay.Input
 {
     public class EmitCameraRelativeInputSystem : IExecuteSystem
     {
-        private readonly IInputProvider _inputService;
+        private readonly ILocomotionInput _locomotionInputService;
         private readonly ICameraProvider _cameraProvider;
         private readonly IGroup<InputEntity> _inputs;
 
         public EmitCameraRelativeInputSystem(
             InputContext input, 
-            IInputProvider inputService,
+            ILocomotionInput locomotionInputService,
             ICameraProvider cameraProvider)
         {
-            _inputService = inputService;
+            _locomotionInputService = locomotionInputService;
             _cameraProvider = cameraProvider;
 
             _inputs = input.GetGroup(InputMatcher
@@ -30,9 +30,9 @@ namespace Gladiators.Gameplay.Input
             
             foreach (InputEntity input in _inputs)
             {
-                if (_inputService.HasMovementInput)
+                if (_locomotionInputService.HasMovementInput)
                 {
-                    Vector2 worldInput = _inputService.GetMovementInputAxis();
+                    Vector2 worldInput = _locomotionInputService.GetMovementInputAxis();
                     Vector3 forward = camera.transform.forward;
                     Vector3 right = camera.transform.right;
 

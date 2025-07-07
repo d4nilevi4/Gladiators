@@ -96,6 +96,34 @@ namespace Gladiators.Gameplay.Input
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Interactions"",
+            ""id"": ""bd5edfe2-f91b-4d6f-9312-d29dafa076b7"",
+            ""actions"": [
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""48b08e08-da4c-477f-8ee7-ccc17a1f3df7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""314b3cd6-1fa0-4d0b-b6dd-670c847ea20e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -103,11 +131,15 @@ namespace Gladiators.Gameplay.Input
             // Locomotion
             m_Locomotion = asset.FindActionMap("Locomotion", throwIfNotFound: true);
             m_Locomotion_Movement = m_Locomotion.FindAction("Movement", throwIfNotFound: true);
+            // Interactions
+            m_Interactions = asset.FindActionMap("Interactions", throwIfNotFound: true);
+            m_Interactions_Interaction = m_Interactions.FindAction("Interaction", throwIfNotFound: true);
         }
 
         ~@PlayerInputActions()
         {
             UnityEngine.Debug.Assert(!m_Locomotion.enabled, "This will cause a leak and performance issues, PlayerInputActions.Locomotion.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_Interactions.enabled, "This will cause a leak and performance issues, PlayerInputActions.Interactions.Disable() has not been called.");
         }
 
         public void Dispose()
@@ -211,9 +243,59 @@ namespace Gladiators.Gameplay.Input
             }
         }
         public LocomotionActions @Locomotion => new LocomotionActions(this);
+
+        // Interactions
+        private readonly InputActionMap m_Interactions;
+        private List<IInteractionsActions> m_InteractionsActionsCallbackInterfaces = new List<IInteractionsActions>();
+        private readonly InputAction m_Interactions_Interaction;
+        public struct InteractionsActions
+        {
+            private @PlayerInputActions m_Wrapper;
+            public InteractionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Interaction => m_Wrapper.m_Interactions_Interaction;
+            public InputActionMap Get() { return m_Wrapper.m_Interactions; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(InteractionsActions set) { return set.Get(); }
+            public void AddCallbacks(IInteractionsActions instance)
+            {
+                if (instance == null || m_Wrapper.m_InteractionsActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_InteractionsActionsCallbackInterfaces.Add(instance);
+                @Interaction.started += instance.OnInteraction;
+                @Interaction.performed += instance.OnInteraction;
+                @Interaction.canceled += instance.OnInteraction;
+            }
+
+            private void UnregisterCallbacks(IInteractionsActions instance)
+            {
+                @Interaction.started -= instance.OnInteraction;
+                @Interaction.performed -= instance.OnInteraction;
+                @Interaction.canceled -= instance.OnInteraction;
+            }
+
+            public void RemoveCallbacks(IInteractionsActions instance)
+            {
+                if (m_Wrapper.m_InteractionsActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IInteractionsActions instance)
+            {
+                foreach (var item in m_Wrapper.m_InteractionsActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_InteractionsActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public InteractionsActions @Interactions => new InteractionsActions(this);
         public interface ILocomotionActions
         {
             void OnMovement(InputAction.CallbackContext context);
+        }
+        public interface IInteractionsActions
+        {
+            void OnInteraction(InputAction.CallbackContext context);
         }
     }
 }

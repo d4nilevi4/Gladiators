@@ -34,7 +34,7 @@ namespace Gladiators.MainMenu
         private void OnLoadCitySceneButtonPressed()
         {
             _gameStateMachine
-                .Enter<LoadingBattleState, string>(Scenes.CITY)
+                .Enter<CityBattleState>()
                 .Forget();
         }
     }

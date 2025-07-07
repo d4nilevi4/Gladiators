@@ -1,5 +1,3 @@
-using Entitas;
-
 namespace Gladiators.Gameplay.Input
 {
     public class TearDownInputSystem : ITearDownSystem

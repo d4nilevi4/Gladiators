@@ -12,15 +12,19 @@ public static class InputComponentsLookup {
     public const int CameraRelativeInput = 1;
     public const int Input = 2;
     public const int InputAxis = 3;
-    public const int WorldInput = 4;
+    public const int InteractionInput = 4;
+    public const int MouseScreenPosition = 5;
+    public const int WorldInput = 6;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "CameraRelativeInput",
         "Input",
         "InputAxis",
+        "InteractionInput",
+        "MouseScreenPosition",
         "WorldInput"
     };
 
@@ -29,6 +33,8 @@ public static class InputComponentsLookup {
         typeof(Gladiators.Gameplay.Input.CameraRelativeInput),
         typeof(Gladiators.Gameplay.Input.Input),
         typeof(Gladiators.Gameplay.Input.InputAxis),
+        typeof(Gladiators.Gameplay.Input.InteractionInputComponent),
+        typeof(Gladiators.Gameplay.Input.MouseScreenPosition),
         typeof(Gladiators.Gameplay.Input.WorldInput)
     };
 }

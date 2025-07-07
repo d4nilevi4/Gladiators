@@ -49,9 +49,9 @@ namespace Gladiators.Infrastructure
             Container.BindInterfacesAndSelfTo<LoadProgressState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingMenuState>().AsSingle();
             Container.BindInterfacesAndSelfTo<MenuLoopState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CityBattleState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CityEnterState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CityLoopState>().AsSingle();
         }
 
         private void BindContexts()
@@ -88,7 +88,9 @@ namespace Gladiators.Infrastructure
 
         private void BindInputService()
         {
-            Container.BindInterfacesTo<InputProvider>().AsSingle();
+            Container.BindInterfacesTo<MainInput>().AsSingle();
+            Container.Bind<ILocomotionInput>().To<LocomotionInput>().AsSingle();
+            Container.Bind<IInteractionInput>().To<InteractionInput>().AsSingle();
         }
 
         private void BindGameplayServices()

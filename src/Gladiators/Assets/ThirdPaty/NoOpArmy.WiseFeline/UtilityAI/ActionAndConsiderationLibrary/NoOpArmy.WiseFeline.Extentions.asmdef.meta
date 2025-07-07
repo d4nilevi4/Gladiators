@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aec9bec6f18aa6149b8d885013637dd4
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 249840
+  packageName: Wise Feline (Lite Immersive & Emergent Utility AI)
+  packageVersion: 1.26.3
+  assetPath: Assets/NoOpArmy.WiseFeline/UtilityAI/ActionAndConsiderationLibrary/NoOpArmy.WiseFeline.Extentions.asmdef
+  uploadId: 730759

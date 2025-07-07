@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c64ef7c85dae6c84d8b082439e88a1fa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 249840
+  packageName: Wise Feline (Lite Immersive & Emergent Utility AI)
+  packageVersion: 1.26.3
+  assetPath: Assets/NoOpArmy.WiseFeline/Den/DenUtilityComponents/Components/Faction.cs
+  uploadId: 730759
