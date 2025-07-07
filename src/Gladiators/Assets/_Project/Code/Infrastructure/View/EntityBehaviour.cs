@@ -1,5 +1,4 @@
 using Gladiators.Gameplay;
-using UnityEngine;
 
 namespace Gladiators.Infrastructure
 {
@@ -25,7 +24,7 @@ namespace Gladiators.Infrastructure
             foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>())
                 registrar.RegisterComponents();
             
-            foreach (Collider col in GetComponentsInChildren<Collider>(includeInactive: true)) 
+            foreach (Collider col in GetComponentsInChildren<Collider>(includeInactive: true))
                 _collisionRegistry.Register(col.GetInstanceID(), _entity);
         }
 

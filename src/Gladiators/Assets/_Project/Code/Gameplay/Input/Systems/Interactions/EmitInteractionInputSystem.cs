@@ -10,11 +10,11 @@ public class EmitInteractionInputSystem : IExecuteSystem
         IInteractionInput interactionInput)
     {
         _interactionInput = interactionInput;
-            
+
         _inputs = input.GetGroup(InputMatcher
             .AllOf(
                 InputMatcher.Input,
-                InputMatcher.WorldInput));
+                InputMatcher.InteractionInput));
     }
 
     public void Execute()
@@ -22,8 +22,8 @@ public class EmitInteractionInputSystem : IExecuteSystem
         foreach (InputEntity input in _inputs)
         {
             if (_interactionInput.IsInteractionPressed())
-                input.AddMouseScreenPosition(UnityEngine.Input.mousePosition);
-            else
+                input.ReplaceMouseScreenPosition(UnityEngine.Input.mousePosition);
+            else if(input.hasMouseScreenPosition)
                 input.RemoveMouseScreenPosition();
         }
     }

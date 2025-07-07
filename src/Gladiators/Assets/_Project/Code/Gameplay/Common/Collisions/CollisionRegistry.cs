@@ -4,7 +4,7 @@ namespace Gladiators.Gameplay;
 
 public class CollisionRegistry : ICollisionRegistry
 {
-    private readonly Dictionary<int, IEntity> _entityByInstanceId = new();
+    private readonly Dictionary<int, IEntity> _entityByInstanceId = new(100);
 
     public void Register(int instanceId, IEntity entity)
     {
