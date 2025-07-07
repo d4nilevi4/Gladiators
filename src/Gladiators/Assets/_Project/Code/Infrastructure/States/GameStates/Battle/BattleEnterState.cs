@@ -6,15 +6,15 @@ namespace Gladiators.Infrastructure
     public class BattleEnterState : IState
     {
         private readonly IGameStateMachine _stateMachine;
-        private readonly ILevelDataProvider _levelDataProvider;
+        private readonly ICityLevelDataProvider _cityLevelDataProvider;
 
         public BattleEnterState(
             IGameStateMachine stateMachine,
-            ILevelDataProvider levelDataProvider
+            ICityLevelDataProvider cityLevelDataProvider
         )
         {
             _stateMachine = stateMachine;
-            _levelDataProvider = levelDataProvider;
+            _cityLevelDataProvider = cityLevelDataProvider;
         }
 
         public async UniTask Enter()

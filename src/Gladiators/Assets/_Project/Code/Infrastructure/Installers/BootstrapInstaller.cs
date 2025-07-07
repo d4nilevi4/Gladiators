@@ -95,7 +95,7 @@ namespace Gladiators.Infrastructure
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
-            Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<ICityLevelDataProvider>().To<CityLevelDataProvider>().AsSingle();
             Container.Bind<IStaticDataProvider>().To<StaticDataProvider>().AsSingle();
         }
 
