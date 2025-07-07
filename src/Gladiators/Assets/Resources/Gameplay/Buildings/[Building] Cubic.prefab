@@ -248,7 +248,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1910
+  m_VersionIndex: 1928
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -363,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 7487496794814705138, guid: 4f378b0f292e0e94296090fcd84831f5, type: 3}
       propertyPath: m_Name
       value: '[Building] Cubic'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666088147525823487, guid: 4f378b0f292e0e94296090fcd84831f5, type: 3}
+      propertyPath: <BuildingTypeId>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9019812507265155967, guid: 4f378b0f292e0e94296090fcd84831f5, type: 3}
       propertyPath: m_LocalPosition.x

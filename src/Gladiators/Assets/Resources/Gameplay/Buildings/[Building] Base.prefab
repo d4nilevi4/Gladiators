@@ -87,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9019812507265155967}
   - component: {fileID: 1447756571690018915}
+  - component: {fileID: 7666088147525823487}
   - component: {fileID: 7753158283733452758}
   m_Layer: 0
   m_Name: '[Building] Base'
@@ -124,6 +125,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1dfe47b4e44a6cb5b5b868e22ea0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7666088147525823487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487496794814705138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320d3e9edf8d4458b05b7b8bc80b6e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BuildingTypeId>k__BackingField: 0
 --- !u!65 &7753158283733452758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143,5 +157,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 2.5, z: 0}
