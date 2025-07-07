@@ -8,6 +8,10 @@ public class InteractableRayCastHitSystem : IExecuteSystem
     private readonly ICameraProvider _cameraProvider;
     private readonly ICollisionRegistry _collisionRegistry;
     private readonly IGroup<InputEntity> _inputs;
+    
+    private readonly RaycastHit[] _hits = new RaycastHit[1];
+    
+    private int ColliderId => _hits[0].collider.GetInstanceID();
 
     public InteractableRayCastHitSystem(
         InputContext input,
@@ -29,25 +33,30 @@ public class InteractableRayCastHitSystem : IExecuteSystem
     {
         foreach (InputEntity input in _inputs)
         {
-            if (_interactionInput.IsInteractionPressed() && HasCollides(out int colliderId))
-                input.ReplaceInteractedColliderId(colliderId);
+            int hitsCount = UpdateHits();
+            
+            if (_interactionInput.IsInteractionPressed() && HasCollides(hitsCount))
+                input.ReplaceInteractedColliderId(ColliderId);
             else if (input.hasInteractedColliderId)
                 input.RemoveInteractedColliderId();
         }
     }
 
-    private bool HasCollides(out int colliderId)
+    private int UpdateHits()
     {
-        colliderId = -1;
-
         Vector2 screenPos = UnityEngine.Input.mousePosition;
         Ray ray = _cameraProvider.MainCamera.ScreenPointToRay(screenPos);
 
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            colliderId = hit.collider.GetInstanceID();
-            var entity = _collisionRegistry.Get<GameEntity>(colliderId);
+        return Physics.RaycastNonAlloc(ray, _hits, float.MaxValue);
+    }
 
+    private bool HasCollides(int hitCount)
+    {
+        if (hitCount > 0)
+        {
+            var hit = _hits[0];
+            var colliderId = hit.collider.GetInstanceID();
+            var entity = _collisionRegistry.Get<GameEntity>(colliderId);
             return entity != null;
         }
 

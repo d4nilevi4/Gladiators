@@ -9,7 +9,6 @@ public sealed class CityInputFeature : CustomFeature
     {
         Add(systemFactory.Create<InitializeInteractionInputSystem>());
         
-        Add(systemFactory.Create<EmitInteractionInputSystem>());
         Add(systemFactory.Create<InteractableRayCastHitSystem>());
         
         Add(systemFactory.Create<DisableInteractionInputSystem>());
