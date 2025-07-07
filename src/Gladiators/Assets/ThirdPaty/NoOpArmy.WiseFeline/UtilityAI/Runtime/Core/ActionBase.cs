@@ -25,20 +25,19 @@ namespace NoOpArmy.WiseFeline
         /// </summary>
         [Header("Generic")]
         [SerializeField, Range(0, 10)]
-        [Tooltip("The action's score will be multiplied by this value so you can increase/decrease the score of an action by moving this value away from 1.")]
+        [Tooltip(
+            "The action's score will be multiplied by this value so you can increase/decrease the score of an action by moving this value away from 1.")]
         private float _weight = 1f;
 
         /// <summary>
         /// Maximum number of targets which this action should consider
         /// </summary>
-        [SerializeField]
-        protected int _maxTargetCount = 5;
+        [SerializeField] protected int _maxTargetCount = 5;
 
         /// <summary>
         /// Should the action add a 25% score bonus to the current target to not change the target multiple times too quickly when scores are too close.
         /// </summary>
-        [SerializeField]
-        protected bool _useMomentumOnTarget;
+        [SerializeField] protected bool _useMomentumOnTarget;
 
         /// <summary>
         /// List of the considerations for the action.
@@ -56,8 +55,7 @@ namespace NoOpArmy.WiseFeline
         /// <summary>
         /// List of all considerations
         /// </summary>
-        [SerializeField, HideInInspector]
-        private List<ConsiderationBase> _considerations;
+        [SerializeField, HideInInspector] private List<ConsiderationBase> _considerations;
 
         /// <summary>
         /// List of the considerations which work on the action's target
@@ -82,17 +80,24 @@ namespace NoOpArmy.WiseFeline
         /// <summary>
         /// The last calculated score of the action in the last think operation.
         /// </summary>
-        public float Score { get { return _score; } }
+        public float Score
+        {
+            get { return _score; }
+        }
 
         /// <summary>
         /// The wait of the action which is multiplied by the score to allow you to prioritize some actions
         /// </summary>
-        public float Weight { get { return _weight; } }
+        public float Weight
+        {
+            get { return _weight; }
+        }
 
         /// <summary>
         /// tracks all targets and their scores with the list below it
         /// </summary>
         private List<Component> TargetsScoresList1;
+
         /// <summary>
         /// tracks all targets and their scores with the list above it
         /// </summary>
@@ -104,6 +109,7 @@ namespace NoOpArmy.WiseFeline
         /// If the action doesn't have any targets and target based considerations then this field doesn't matter and it value should be considered undefined.
         /// </summary>
         public Component ChosenTarget;
+
         private float _score;
         private float _compensationFactor;
         private int _considerationCount;
@@ -182,6 +188,7 @@ namespace NoOpArmy.WiseFeline
             {
                 action.Considerations[i] = this.Considerations[i].Clone();
             }
+
             return action;
         }
 
@@ -219,6 +226,7 @@ namespace NoOpArmy.WiseFeline
                         selfCons.Add(_considerations[i]);
                 }
             }
+
             _targetedConsiderations = targetedCons.ToArray();
             _selfConsiderations = selfCons.ToArray();
 
@@ -227,6 +235,7 @@ namespace NoOpArmy.WiseFeline
             {
                 _selfConsiderations[i].Initialize(Brain);
             }
+
             for (int i = 0; i < _targetedConsiderations.Length; i++)
             {
                 _targetedConsiderations[i].Initialize(Brain);
@@ -238,44 +247,69 @@ namespace NoOpArmy.WiseFeline
         /// </summary>
         protected virtual void OnInitialized()
         {
-
         }
 
 
-        internal void Start() { OnStart(); }
+        internal void Start()
+        {
+            OnStart();
+        }
 
         /// <summary>
         /// Should be used like MonoBehaviour's Start for the action
         /// </summary>
-        protected virtual void OnStart() { }
+        protected virtual void OnStart()
+        {
+        }
 
-        internal void Update() { OnUpdate(); }
+        internal void Update()
+        {
+            OnUpdate();
+        }
 
         /// <summary>
         /// Should be used like MonoBehaviour's Update for the action
         /// </summary>
-        protected virtual void OnUpdate() { }
+        protected virtual void OnUpdate()
+        {
+        }
 
-        internal void LateUpdate() { OnLateUpdate(); }
+        internal void LateUpdate()
+        {
+            OnLateUpdate();
+        }
 
         /// <summary>
         /// Should be used like MonoBehaviour's LateUpdate for the action
         /// </summary>
-        protected virtual void OnLateUpdate() { }
+        protected virtual void OnLateUpdate()
+        {
+        }
 
-        internal void FixedUpdate() { OnFixedUpdate(); }
+        internal void FixedUpdate()
+        {
+            OnFixedUpdate();
+        }
 
         /// <summary>
         /// Should be used like MonoBehaviour's FixedUpdate for the action
         /// </summary>
-        protected virtual void OnFixedUpdate() { }
+        protected virtual void OnFixedUpdate()
+        {
+        }
 
-        internal void Finish() { OnFinish(); }
+        internal void Finish()
+        {
+            OnFinish();
+        }
 
         /// <summary>
         /// Called when the action is finished, either by failing or succeeding in achieving a desired behaviour
         /// </summary>
-        protected virtual void OnFinish() { }
+        protected virtual void OnFinish()
+        {
+        }
+
         [Obsolete("Use ActionSucceeded")]
         protected void ActionSucceed()
         {
@@ -306,23 +340,12 @@ namespace NoOpArmy.WiseFeline
         /// Calculates the score of the action
         /// </summary>
         /// <returns></returns>
-        internal float GetScore(DataRecorder.DataRecorder recorder, int recordIndex)
+        internal float GetScore(int recordIndex)
         {
             _considerationCount = _selfConsiderations.Length + _targetedConsiderations.Length;
-#if UNITY_EDITOR
-            var dataRec = new DataRecorder.SubRecord
-            {
-                text = this.Name,
-                indentationLevel = 1,
-            };
-            if (Debug.isDebugBuild)
-                recorder?.AddSubRecord(dataRec, recordIndex);
-#endif
+
             if (_considerationCount == 0)
             {
-#if UNITY_EDITOR
-                dataRec.text += " Score: 0 <color=red>no considerations</color>";
-#endif
                 _score = 0;
                 return 0;
             }
@@ -330,7 +353,7 @@ namespace NoOpArmy.WiseFeline
             _compensationFactor = 1f - (1f / _considerationCount);
             _score = 1;
 
-            float selfScore = GetSelfScore(recorder, recordIndex);
+            float selfScore = GetSelfScore(recordIndex);
 
             if (selfScore == 0)
             {
@@ -343,6 +366,7 @@ namespace NoOpArmy.WiseFeline
                 _score = 0;
                 return 0f;
             }
+
             for (int i = TargetsScoresList1.Count - 1; i >= 0; --i)
             {
                 if (TargetsScoresList1[i] == null)
@@ -358,60 +382,23 @@ namespace NoOpArmy.WiseFeline
                 {
                     TargetsScoresList2[i] = 1;
                 }
-#if UNITY_EDITOR
-                debugTargetedScores.Clear();
-#endif
                 for (int i = 0; i < _targetedConsiderations.Length; i++)
                 {
                     MultiplyConsiderationScoreForAllTargets(_targetedConsiderations[i]);
                 }
-#if UNITY_EDITOR
-                foreach (var kvp in debugTargetedScores)
-                {
-                    if (Debug.isDebugBuild)
-                        recorder?.AddSubRecord(new DataRecorder.SubRecord
-                        {
-                            text = $"Target: {kvp.Key.gameObject.name}",
-                            indentationLevel = 2,
-                        }, recordIndex);
-                    foreach (KeyValuePair<ConsiderationBase, float> s in kvp.Value)
-                    {
-                        if (Debug.isDebugBuild)
-                            recorder?.AddSubRecord(new DataRecorder.SubRecord
-                            {
-                                text = $"{s.Key.Name} Score: {s.Value}",
-                                indentationLevel = 3,
-                            }, recordIndex);
-                    }
-                }
-#endif
                 int index = GetBestTarget();
                 ChosenTarget = TargetsScoresList1[index];
-#if UNITY_EDITOR
-                if (debugTargetedScores.Count > 0)
-                {
-                    Dictionary<ConsiderationBase, float> scores = debugTargetedScores[ChosenTarget];
-                    for (int i = 0; i < _targetedConsiderations.Length; i++)
-                    {
-                        _targetedConsiderations[i].SetScore(scores[_targetedConsiderations[i]]);
-                    }
-                }
-                else
-                {
-                    UnityEngine.Debug.LogWarning($"Action {Name} has targets but there are no considerations with NeedTarget = true");
-                }
-#endif
                 _score = _score * selfScore * TargetsScoresList2[index];
             }
-            else if (_targetedConsiderations.Length > 0) //if we have targeted considerations but no targets then we should not do the action
+            else if
+                (_targetedConsiderations.Length >
+                 0) //if we have targeted considerations but no targets then we should not do the action
                 _score = 0;
             else
                 _score *= selfScore;
 
             _score *= _weight;
-#if UNITY_EDITOR
-            dataRec.text += $" score: {_score}";
-#endif
+
             return _score;
         }
 
@@ -419,7 +406,7 @@ namespace NoOpArmy.WiseFeline
         /// Gets the score for self considerations
         /// </summary>
         /// <returns></returns>
-        private float GetSelfScore(DataRecorder.DataRecorder recorder, int recordIndex)
+        private float GetSelfScore(int recordIndex)
         {
             float totalScore = 1;
             for (int i = 0; i < _selfConsiderations.Length; i++)
@@ -428,30 +415,20 @@ namespace NoOpArmy.WiseFeline
                 score = ComputeCompensatedScore(score);
                 totalScore *= score;
                 //if consideration is close to 0 then multiplying things by it would only result in 0 so there is no point in multiplying the rest
-#if !UNITY_EDITOR
+
                 if (totalScore < Mathf.Epsilon)
                 {
-
                     return 0;
-
-            }
-#else
-                if (Debug.isDebugBuild)
-                {
-                    string recordText = $"{_selfConsiderations[i].Name} Score: {score} TotalScore: {totalScore}";
-                    recorder?.AddSubRecord(new DataRecorder.SubRecord
-                    {
-                        text = recordText,
-                        indentationLevel = 2,
-                    }, recordIndex);
                 }
-#endif
             }
+
             return totalScore;
         }
 
         //This is only used in the editor for the debugger
-        private readonly Dictionary<Component, Dictionary<ConsiderationBase, float>> debugTargetedScores = new();
+        private readonly Dictionary<Component, Dictionary<ConsiderationBase, float>>
+            debugTargetedScores = new();
+
         private void MultiplyConsiderationScoreForAllTargets(ConsiderationBase consideration)
         {
             for (int i = 0; i < TargetsScoresList1.Count; i++)
@@ -464,7 +441,8 @@ namespace NoOpArmy.WiseFeline
                 float score = consideration.GetScore(TargetsScoresList1[i]);
 #if UNITY_EDITOR
                 if (!debugTargetedScores.ContainsKey(TargetsScoresList1[i]))
-                    debugTargetedScores[TargetsScoresList1[i]] = new Dictionary<ConsiderationBase, float>();
+                    debugTargetedScores[TargetsScoresList1[i]] =
+                        new Dictionary<ConsiderationBase, float>();
                 debugTargetedScores[TargetsScoresList1[i]][consideration] = consideration.Score;
 #endif
                 score = ComputeCompensatedScore(score);
@@ -491,15 +469,17 @@ namespace NoOpArmy.WiseFeline
                     lastTargetIndex = i;
                     TargetsScoresList2[i] += _momentum;
                 }
+
                 if (TargetsScoresList2[i] >= maxScore)
                 {
                     maxScore = TargetsScoresList2[i];
                     index = i;
                 }
-
             }
+
             if (lastTargetIndex >= 0)
-                TargetsScoresList2[lastTargetIndex] -= _momentum;//so other action score considerations don't get affected by this
+                TargetsScoresList2[lastTargetIndex] -=
+                    _momentum; //so other action score considerations don't get affected by this
             return index;
         }
     }

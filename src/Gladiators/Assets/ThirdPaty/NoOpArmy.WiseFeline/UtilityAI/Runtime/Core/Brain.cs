@@ -1,5 +1,4 @@
 #define WF_LITE
-using NoOpArmy.WiseFeline.DataRecorder;
 using System;
 using System.Collections.Generic;
 using Unity.Profiling;
@@ -134,7 +133,6 @@ namespace NoOpArmy.WiseFeline
         private float _thinkTimer = 0;
         private float _updateTimer = 0;
         private ActionBase _currentAction;
-        private DataRecorder.DataRecorder dataRecorder;
         public int dataRecorderRecordIndex { get; private set; }
 
 
@@ -144,7 +142,6 @@ namespace NoOpArmy.WiseFeline
 
         private void Awake()
         {
-            dataRecorder = GetComponent<DataRecorder.DataRecorder>();
             if (_behavior == null)
             {
                 _behavior = AgentBehavior.GetEmpty();
@@ -185,7 +182,7 @@ namespace NoOpArmy.WiseFeline
                 for (int j = 0; j < set.Actions.Count; j++, k++)
                 {
                     ActionBase action = set.Actions[j];
-                    _actionDataList.Add(new ActionData(set, action, action.GetScore(dataRecorder, dataRecorderRecordIndex), action._priority, k));
+                    _actionDataList.Add(new ActionData(set, action, action.GetScore(dataRecorderRecordIndex), action._priority, k));
                 }
             }
         }
@@ -201,7 +198,7 @@ namespace NoOpArmy.WiseFeline
                 for (int j = 0; j < set.Actions.Count; j++, k++)
                 {
                     ActionBase action = set.Actions[j];
-                    _actionDataList.Add(new ActionData(set, action, action.GetScore(dataRecorder, dataRecorderRecordIndex), action._priority, k));
+                    _actionDataList.Add(new ActionData(set, action, action.GetScore(dataRecorderRecordIndex), action._priority, k));
                     pad.Add(new ActionScoringData(action.Score, action._priority, k));
                 }
             }
@@ -301,34 +298,8 @@ namespace NoOpArmy.WiseFeline
                 return;
 
             //If the current action is not interruptable
-#if UNITY_EDITOR
-            if (dataRecorder)
-            {
-                dataRecorderRecordIndex = dataRecorder.GetCurrentFrameRecord();
-            }
-            if (Debug.isDebugBuild)
-            {
-                dataRecorder?.AddSubRecord(new SubRecord
-                {
-                    text = "Actions",
-                    indentationLevel = 0
-                }
-                , dataRecorderRecordIndex);
-            }
-#endif
             if (_currentAction != null && !_currentAction._isInterruptable)
             {
-#if UNITY_EDITOR
-                if (Debug.isDebugBuild)
-                {
-                    dataRecorder?.AddSubRecord(new SubRecord
-                    {
-                        text = $"{currentAction.Name} <color=red>uninterruptable</color>",
-                        indentationLevel = 1
-                    }
-                    , dataRecorderRecordIndex);
-                }
-#endif
                 Behavior.OnThinkDone?.Invoke(default);
                 return;
             }
@@ -358,28 +329,10 @@ namespace NoOpArmy.WiseFeline
                     _currentAction.Start();
                 }
                 Behavior.OnThinkDone?.Invoke(_actionDataList[maxIndex]);
-#if UNITY_EDITOR
-                dataRecorder?.AddShape(new Shape
-                {
-                    color = Color.red,
-                    size = 1,
-                    Type = ShapeType.WiredSphere,
-                    position = transform.position + Vector3.up
-                }, dataRecorderRecordIndex);
-#endif
             }
             else
             {
                 Behavior.OnThinkDone?.Invoke(default);
-#if UNITY_EDITOR
-                dataRecorder?.AddShape(new Shape
-                {
-                    color = Color.white,
-                    size = 1,
-                    Type = ShapeType.WiredSphere,
-                    position = transform.position + Vector3.up
-                }, dataRecorderRecordIndex);
-#endif
             }
             thinkMarker.End();
         }
