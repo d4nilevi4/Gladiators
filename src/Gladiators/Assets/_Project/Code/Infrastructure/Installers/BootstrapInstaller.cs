@@ -81,6 +81,7 @@ namespace Gladiators.Infrastructure
         private void BindCommonServices()
         {
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
             Container.Bind<IDrawGizmoReceiver>().FromInstance(this).AsSingle();
             Container.Bind<ILogger>().FromInstance(Debug.unityLogger).AsSingle();
         }
