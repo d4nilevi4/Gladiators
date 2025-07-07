@@ -21,10 +21,10 @@ public class EmitInteractionInputSystem : IExecuteSystem
     {
         foreach (InputEntity input in _inputs)
         {
-            // if (_interactionInput.IsInteractionPressed())
-                // input.ReplaceInputAxis(_locomotionInput.GetMovementInputAxis());
-            // else if (input.hasInputAxis)
-                // input.RemoveInputAxis();
+            if (_interactionInput.IsInteractionPressed())
+                input.AddMouseScreenPosition(UnityEngine.Input.mousePosition);
+            else
+                input.RemoveMouseScreenPosition();
         }
     }
 }
