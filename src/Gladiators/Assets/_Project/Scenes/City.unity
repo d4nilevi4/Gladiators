@@ -848,6 +848,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 533669407}
+    - target: {fileID: 1681169177861282330, guid: 06e28a311c568eb408f8cb025afb675d, type: 3}
+      propertyPath: m_VersionIndex
+      value: 834
+      objectReference: {fileID: 0}
     - target: {fileID: 1928808200128960312, guid: 06e28a311c568eb408f8cb025afb675d, type: 3}
       propertyPath: m_Name
       value: '[Building] Spherical'
@@ -1563,6 +1567,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 812867174}
+    - target: {fileID: 2167148885505622662, guid: c44ec753b3001db40a0687a0de46d166, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1378
+      objectReference: {fileID: 0}
     - target: {fileID: 6685670866547353079, guid: c44ec753b3001db40a0687a0de46d166, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2671,6 +2679,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1509636671}
+    - target: {fileID: 7998345587638860815, guid: 71a3f8914d7a4b2409d030d6a09005f3, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1931
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2741,6 +2753,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1071775937}
+    - target: {fileID: 3724925780211331618, guid: 29c9c8ad3f651b848a3d793477a87198, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1162
+      objectReference: {fileID: 0}
     - target: {fileID: 4645457033659330355, guid: 29c9c8ad3f651b848a3d793477a87198, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3064,6 +3080,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1547903878}
+    - target: {fileID: 2043544196882988214, guid: 3b8d82e6ef3b8c44580c0c722767a2c3, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1270
+      objectReference: {fileID: 0}
     - target: {fileID: 4242397289825132355, guid: 3b8d82e6ef3b8c44580c0c722767a2c3, type: 3}
       propertyPath: m_Mesh
       value: 

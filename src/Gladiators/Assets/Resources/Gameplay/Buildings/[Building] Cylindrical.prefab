@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3493775343687494760}
   - component: {fileID: 8117568552201766904}
   - component: {fileID: 4242397289825132355}
-  - component: {fileID: 7771828688615730695}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1730,28 +1729,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155545015342325915}
   m_Mesh: {fileID: 0}
---- !u!64 &7771828688615730695
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155545015342325915}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1001 &3848302933645263939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1762,7 +1739,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7487496794814705138, guid: 4f378b0f292e0e94296090fcd84831f5, type: 3}
       propertyPath: m_Name
-      value: '[Building] Cilindrical'
+      value: '[Building] Cylindrical'
       objectReference: {fileID: 0}
     - target: {fileID: 7666088147525823487, guid: 4f378b0f292e0e94296090fcd84831f5, type: 3}
       propertyPath: <BuildingTypeId>k__BackingField
