@@ -1,6 +1,4 @@
 ﻿using Gladiators.Common.Entity;
-using UnityEngine;
-using Zenject;
 
 namespace Gladiators.Infrastructure
 {
