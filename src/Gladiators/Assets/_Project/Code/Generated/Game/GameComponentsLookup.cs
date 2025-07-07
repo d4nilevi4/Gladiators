@@ -13,12 +13,14 @@ public static class GameComponentsLookup {
     public const int View = 2;
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
-    public const int Id = 5;
-    public const int PositionOffset = 6;
-    public const int Transform = 7;
-    public const int WorldPosition = 8;
+    public const int Building = 5;
+    public const int BuildingTypeId = 6;
+    public const int Id = 7;
+    public const int PositionOffset = 8;
+    public const int Transform = 9;
+    public const int WorldPosition = 10;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 11;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -26,6 +28,8 @@ public static class GameComponentsLookup {
         "View",
         "ViewPath",
         "ViewPrefab",
+        "Building",
+        "BuildingTypeId",
         "Id",
         "PositionOffset",
         "Transform",
@@ -38,6 +42,8 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Common.CommonComponents.View),
         typeof(Gladiators.Common.CommonComponents.ViewPath),
         typeof(Gladiators.Common.CommonComponents.ViewPrefab),
+        typeof(Gladiators.Gameplay.Buildings.Building),
+        typeof(Gladiators.Gameplay.Buildings.BuildingTypeIdComponent),
         typeof(Gladiators.Gameplay.Id),
         typeof(Gladiators.Gameplay.PositionOffset),
         typeof(Gladiators.Gameplay.TransformComponent),

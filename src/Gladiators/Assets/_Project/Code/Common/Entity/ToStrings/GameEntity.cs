@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using Entitas;
+using Gladiators.Common;
 using Gladiators.Common.Entity;
+using Gladiators.Gameplay.Buildings;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
@@ -30,8 +33,8 @@ public sealed partial class GameEntity : INamedEntity
             {
                 switch (component.GetType().Name)
                 {
-                    // case nameof(Hero):
-                        // return PrintHero();
+                    case nameof(Building):
+                        return PrintBuilding();
                 }
             }
         }
@@ -43,12 +46,14 @@ public sealed partial class GameEntity : INamedEntity
         return components.First().GetType().Name;
     }
     
-    // private string PrintHero()
-    // {
-        // return new StringBuilder($"Player ")
-            // .With(s => s.Append($"Id:{Id}"), when: hasId)
-            // .ToString();
-    // }
+    private string PrintBuilding()
+    {
+        return new StringBuilder()
+            .With(s => s.Append($"Id: {Id} "), when: hasId)
+            .Append("Building ")
+            .With(s => s.Append($"Type: {BuildingTypeId} "), when: hasBuildingTypeId)
+            .ToString();
+    }
 
     public string BaseToString() => base.ToString();
 }
