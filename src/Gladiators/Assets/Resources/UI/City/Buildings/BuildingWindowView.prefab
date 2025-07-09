@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 207382715276343514}
   - component: {fileID: 8816157512815416068}
   - component: {fileID: 5120255269243675097}
-  - component: {fileID: 3267923237227049064}
+  - component: {fileID: 3655326610437486671}
   m_Layer: 5
   m_Name: Procedural Image
   m_TagString: Untagged
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7084601584697005350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a6ae9e0cddb96d4391c44f83e89fbb0, type: 3}
+  m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3f91331724a9da84197e9b6d94f0483c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   borderWidth: 0
   falloffDistance: 0
---- !u!114 &3267923237227049064
+--- !u!114 &3655326610437486671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7084601584697005350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2c0da7f5a8f1340b511fdc1e4d2f7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8714c362c0c8a6449a9559a31cdab9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 20
