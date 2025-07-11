@@ -13,21 +13,26 @@ public static class GameComponentsLookup {
     public const int View = 2;
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
-    public const int Building = 5;
-    public const int BuildingTypeId = 6;
-    public const int Id = 7;
-    public const int Interactable = 8;
-    public const int ShowBuildingWindowInteractable = 9;
-    public const int MovementAvailable = 10;
-    public const int MovementDirection = 11;
-    public const int MovementSpeed = 12;
-    public const int RigidbodyMovable = 13;
-    public const int PositionOffset = 14;
-    public const int Transform = 15;
-    public const int Rigidbody = 16;
-    public const int WorldPosition = 17;
+    public const int AnimatedEntity = 5;
+    public const int AnimationEvent = 6;
+    public const int AnimationEventName = 7;
+    public const int AnimationHash = 8;
+    public const int AnimationStateEvent = 9;
+    public const int Building = 10;
+    public const int BuildingTypeId = 11;
+    public const int Id = 12;
+    public const int Interactable = 13;
+    public const int ShowBuildingWindowInteractable = 14;
+    public const int MovementAvailable = 15;
+    public const int MovementDirection = 16;
+    public const int MovementSpeed = 17;
+    public const int RigidbodyMovable = 18;
+    public const int PositionOffset = 19;
+    public const int Transform = 20;
+    public const int Rigidbody = 21;
+    public const int WorldPosition = 22;
 
-    public const int TotalComponents = 18;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -35,6 +40,11 @@ public static class GameComponentsLookup {
         "View",
         "ViewPath",
         "ViewPrefab",
+        "AnimatedEntity",
+        "AnimationEvent",
+        "AnimationEventName",
+        "AnimationHash",
+        "AnimationStateEvent",
         "Building",
         "BuildingTypeId",
         "Id",
@@ -56,6 +66,11 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Common.CommonComponents.View),
         typeof(Gladiators.Common.CommonComponents.ViewPath),
         typeof(Gladiators.Common.CommonComponents.ViewPrefab),
+        typeof(Gladiators.Gameplay.Animation.AnimatedEntity),
+        typeof(Gladiators.Gameplay.Animation.AnimationEvent),
+        typeof(Gladiators.Gameplay.Animation.AnimationEventName),
+        typeof(Gladiators.Gameplay.Animation.AnimationHash),
+        typeof(Gladiators.Gameplay.Animation.AnimationStateEvent),
         typeof(Gladiators.Gameplay.Buildings.Building),
         typeof(Gladiators.Gameplay.Buildings.BuildingTypeIdComponent),
         typeof(Gladiators.Gameplay.Id),
