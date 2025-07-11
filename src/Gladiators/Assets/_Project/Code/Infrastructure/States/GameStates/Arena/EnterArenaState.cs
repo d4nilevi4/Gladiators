@@ -21,7 +21,7 @@ namespace Gladiators.Infrastructure
         {
             PlaceHero();
 
-            await _stateMachine.Enter<CityLoopState>();
+            await _stateMachine.Enter<ArenaLoopState>();
         }
 
         public UniTask Exit() =>
