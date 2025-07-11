@@ -1,4 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
+using Gladiators.Gameplay.Gladiator;
+using Gladiators.Infrastructure;
 using JetBrains.Annotations;
 
 namespace Gladiators.Gameplay.StaticData
@@ -7,5 +9,7 @@ namespace Gladiators.Gameplay.StaticData
     {
         [MustUseReturnValue]
         UniTask LoadAll();
+
+        EntityBehaviour GetGladiatorPrefab(GladiatorTypeId typeId);
     }
 }

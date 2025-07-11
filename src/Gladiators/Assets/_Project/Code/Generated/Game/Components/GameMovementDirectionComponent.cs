@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Gladiators.Gameplay.Movement.MovementDirection movementDirection { get { return (Gladiators.Gameplay.Movement.MovementDirection)GetComponent(GameComponentsLookup.MovementDirection); } }
-    public UnityEngine.Vector2 MovementDirection { get { return movementDirection.Value; } }
+    public UnityEngine.Vector3 MovementDirection { get { return movementDirection.Value; } }
     public bool hasMovementDirection { get { return HasComponent(GameComponentsLookup.MovementDirection); } }
 
-    public GameEntity AddMovementDirection(UnityEngine.Vector2 newValue) {
+    public GameEntity AddMovementDirection(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.MovementDirection;
         var component = (Gladiators.Gameplay.Movement.MovementDirection)CreateComponent(index, typeof(Gladiators.Gameplay.Movement.MovementDirection));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceMovementDirection(UnityEngine.Vector2 newValue) {
+    public GameEntity ReplaceMovementDirection(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.MovementDirection;
         var component = (Gladiators.Gameplay.Movement.MovementDirection)CreateComponent(index, typeof(Gladiators.Gameplay.Movement.MovementDirection));
         component.Value = newValue;

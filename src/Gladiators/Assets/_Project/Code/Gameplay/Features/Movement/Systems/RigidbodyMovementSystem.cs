@@ -21,7 +21,12 @@ public class RigidbodyMovementSystem : IExecuteSystem
     {
         foreach (GameEntity movable in _movables)
         {
-            Vector2 velocity = (movable.MovementSpeed * movable.MovementDirection).SetY(0);
+            Vector3 movableMovementDirection = movable.isMoving
+                ? (movable.MovementSpeed * movable.MovementDirection)
+                : Vector3.zero;
+            
+            Vector3 velocity = movableMovementDirection.SetY(movable.Rigidbody.linearVelocity.y);
+            
             movable.Rigidbody.linearVelocity = velocity;
         }
     }

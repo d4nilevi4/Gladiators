@@ -20,19 +20,21 @@ public static class GameComponentsLookup {
     public const int AnimationStateEvent = 9;
     public const int Building = 10;
     public const int BuildingTypeId = 11;
-    public const int Id = 12;
-    public const int Interactable = 13;
-    public const int ShowBuildingWindowInteractable = 14;
-    public const int MovementAvailable = 15;
-    public const int MovementDirection = 16;
-    public const int MovementSpeed = 17;
-    public const int RigidbodyMovable = 18;
-    public const int PositionOffset = 19;
-    public const int Transform = 20;
-    public const int Rigidbody = 21;
-    public const int WorldPosition = 22;
+    public const int Gladiator = 12;
+    public const int Id = 13;
+    public const int Interactable = 14;
+    public const int ShowBuildingWindowInteractable = 15;
+    public const int MovementAvailable = 16;
+    public const int MovementDirection = 17;
+    public const int MovementSpeed = 18;
+    public const int Moving = 19;
+    public const int RigidbodyMovable = 20;
+    public const int PositionOffset = 21;
+    public const int Transform = 22;
+    public const int Rigidbody = 23;
+    public const int WorldPosition = 24;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -47,12 +49,14 @@ public static class GameComponentsLookup {
         "AnimationStateEvent",
         "Building",
         "BuildingTypeId",
+        "Gladiator",
         "Id",
         "Interactable",
         "ShowBuildingWindowInteractable",
         "MovementAvailable",
         "MovementDirection",
         "MovementSpeed",
+        "Moving",
         "RigidbodyMovable",
         "PositionOffset",
         "Transform",
@@ -73,12 +77,14 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Gameplay.Animation.AnimationStateEvent),
         typeof(Gladiators.Gameplay.Buildings.Building),
         typeof(Gladiators.Gameplay.Buildings.BuildingTypeIdComponent),
+        typeof(Gladiators.Gameplay.Gladiator.Gladiator),
         typeof(Gladiators.Gameplay.Id),
         typeof(Gladiators.Gameplay.Interactables.Interactable),
         typeof(Gladiators.Gameplay.Interactables.ShowBuildingWindowInteractable),
         typeof(Gladiators.Gameplay.Movement.MovementAvailable),
         typeof(Gladiators.Gameplay.Movement.MovementDirection),
         typeof(Gladiators.Gameplay.Movement.MovementSpeed),
+        typeof(Gladiators.Gameplay.Movement.Moving),
         typeof(Gladiators.Gameplay.Movement.RigidbodyMovable),
         typeof(Gladiators.Gameplay.PositionOffset),
         typeof(Gladiators.Gameplay.TransformComponent),

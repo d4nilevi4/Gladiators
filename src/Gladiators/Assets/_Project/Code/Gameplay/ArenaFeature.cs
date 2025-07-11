@@ -1,8 +1,8 @@
 ﻿using Gladiators.Common;
 using Gladiators.Common.Destruct;
 using Gladiators.Gameplay.Animation;
+using Gladiators.Gameplay.Gladiator;
 using Gladiators.Gameplay.Input;
-using Gladiators.Gameplay.Interactables;
 using Gladiators.Gameplay.Movement;
 using Gladiators.Infrastructure;
 
@@ -15,6 +15,10 @@ public class ArenaFeature : CustomFeature
     )
     {
         Add(systemFactory.Create<BindViewFeature>());
+        
+        Add(systemFactory.Create<ArenaInputFeature>());
+        
+        Add(systemFactory.Create<GladiatorFeature>());
         
         Add(systemFactory.Create<MovementFeature>());
         

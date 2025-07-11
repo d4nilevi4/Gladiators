@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Gladiators.Gameplay.Gladiator;
 using Gladiators.Gameplay.Levels;
 
 namespace Gladiators.Infrastructure
@@ -6,20 +7,23 @@ namespace Gladiators.Infrastructure
     public class EnterArenaState : IState
     {
         private readonly IGameStateMachine _stateMachine;
-        private readonly ICityLevelDataProvider _cityLevelDataProvider;
+        private readonly IArenaLevelDataProvider _arenaLevelDataProvider;
+        private readonly IGladiatorFactory _gladiatorFactory;
 
         public EnterArenaState(
             IGameStateMachine stateMachine,
-            ICityLevelDataProvider cityLevelDataProvider
+            IArenaLevelDataProvider arenaLevelDataProvider,
+            IGladiatorFactory gladiatorFactory
         )
         {
             _stateMachine = stateMachine;
-            _cityLevelDataProvider = cityLevelDataProvider;
+            _arenaLevelDataProvider = arenaLevelDataProvider;
+            _gladiatorFactory = gladiatorFactory;
         }
 
         public async UniTask Enter()
         {
-            PlaceHero();
+            PlaceGladiator();
 
             await _stateMachine.Enter<ArenaLoopState>();
         }
@@ -27,8 +31,10 @@ namespace Gladiators.Infrastructure
         public UniTask Exit() =>
             UniTask.CompletedTask;
 
-        private void PlaceHero()
+        private void PlaceGladiator()
         {
+            _gladiatorFactory.Create(GladiatorTypeId.SimpleGladiator,
+                _arenaLevelDataProvider.PlayerSpawnPosition);
         }
     }
 }
