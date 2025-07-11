@@ -4,11 +4,13 @@ namespace Gladiators.Infrastructure
 {
     public class EntityInstaller : BindingsInstaller
     {
-        public EntityBehaviorProvider EntityBehaviorProvider;
+        public EntityBehaviour EntityBehavior;
         
         public override void InstallBindings(DiContainer container)
         {
-            container.Bind<IEntityBehaviorProvider>().FromInstance(EntityBehaviorProvider).AsSingle();
+            container
+                .Bind<IEntityBehaviorProvider>().To<EntityBehaviorProvider>()
+                .AsSingle().WithArguments(EntityBehavior);
         }
     }
 }

@@ -1,9 +1,14 @@
-﻿using UnityEngine;
-
-namespace Gladiators.Infrastructure
+﻿namespace Gladiators.Infrastructure
 {
-    public class EntityBehaviorProvider : MonoBehaviour, IEntityBehaviorProvider
+    public class EntityBehaviorProvider : IEntityBehaviorProvider
     {
-        [field: SerializeField] public EntityBehaviour EntityBehaviour { get; private set; }
+        public EntityBehaviour EntityBehaviour { get; }
+
+        public EntityBehaviorProvider(
+            EntityBehaviour entityBehaviour
+        )
+        {
+            EntityBehaviour = entityBehaviour;
+        }
     }
 }
