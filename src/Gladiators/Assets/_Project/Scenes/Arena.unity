@@ -671,13 +671,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474076406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.319042, y: 0, z: 0, w: 0.9477406}
+  m_LocalPosition: {x: 0, y: 10.68, z: -25.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.21, y: 0, z: 0}
 --- !u!114 &474076410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +914,7 @@ GameObject:
   - component: {fileID: 908078731}
   - component: {fileID: 908078730}
   - component: {fileID: 908078729}
+  - component: {fileID: 908078732}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -933,7 +934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8a96776feb435f9dde6a7ee158c79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Initializers: []
+  Initializers:
+  - {fileID: 908078732}
 --- !u!114 &908078730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +983,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &908078732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908078727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce65a3293d342f1add1c554553d22cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 474076408}
+  PlayerSpawnPoint: {fileID: 2136194910}
+  UIRoot: {fileID: 735815327}
 --- !u!43 &911163813
 Mesh:
   m_ObjectHideFlags: 0
@@ -6577,6 +6594,37 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &2136194909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136194910}
+  m_Layer: 0
+  m_Name: PlayerSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2136194910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136194909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -12.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6588,3 +6636,4 @@ SceneRoots:
   - {fileID: 735815327}
   - {fileID: 728864970}
   - {fileID: 70993105}
+  - {fileID: 2136194910}
