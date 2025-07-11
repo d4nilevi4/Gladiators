@@ -3,12 +3,12 @@ using Gladiators.Gameplay.Levels;
 
 namespace Gladiators.Infrastructure
 {
-    public class EnterCityState : IState
+    public class EnterArenaState : IState
     {
         private readonly IGameStateMachine _stateMachine;
         private readonly ICityLevelDataProvider _cityLevelDataProvider;
 
-        public EnterCityState(
+        public EnterArenaState(
             IGameStateMachine stateMachine,
             ICityLevelDataProvider cityLevelDataProvider
         )
@@ -19,10 +19,16 @@ namespace Gladiators.Infrastructure
 
         public async UniTask Enter()
         {
+            PlaceHero();
+
             await _stateMachine.Enter<CityLoopState>();
         }
 
         public UniTask Exit() =>
             UniTask.CompletedTask;
+
+        private void PlaceHero()
+        {
+        }
     }
 }

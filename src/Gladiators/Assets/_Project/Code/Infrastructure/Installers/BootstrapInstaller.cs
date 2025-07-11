@@ -51,11 +51,17 @@ namespace Gladiators.Infrastructure
         {
             Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadProgressState>().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<LoadingMenuState>().AsSingle();
             Container.BindInterfacesAndSelfTo<MenuLoopState>().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<LoadCityState>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnterCityState>().AsSingle();
             Container.BindInterfacesAndSelfTo<CityLoopState>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<LoadArenaState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnterArenaState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ArenaLoopState>().AsSingle();
         }
 
         private void BindContexts()
