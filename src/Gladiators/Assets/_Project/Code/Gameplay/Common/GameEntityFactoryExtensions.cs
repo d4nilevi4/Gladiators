@@ -7,7 +7,7 @@ public static class GameEntityFactoryExtensions
     public static GameEntity AddRigidbodyMovementComponents(this GameEntity entity)
     {
         return entity
-                .AddMovementSpeed(10f)
+                .AddMovementSpeed(7f)
                 .AddMovementDirection(default)
                 .With(x => x.isRigidbodyMovable = true)
                 .With(x => x.isMovementAvailable = true)

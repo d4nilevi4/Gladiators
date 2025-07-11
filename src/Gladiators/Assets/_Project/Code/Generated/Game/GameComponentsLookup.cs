@@ -18,23 +18,24 @@ public static class GameComponentsLookup {
     public const int AnimationEventName = 7;
     public const int AnimationHash = 8;
     public const int AnimationStateEvent = 9;
-    public const int Building = 10;
-    public const int BuildingTypeId = 11;
-    public const int Gladiator = 12;
-    public const int Id = 13;
-    public const int Interactable = 14;
-    public const int ShowBuildingWindowInteractable = 15;
-    public const int MovementAvailable = 16;
-    public const int MovementDirection = 17;
-    public const int MovementSpeed = 18;
-    public const int Moving = 19;
-    public const int RigidbodyMovable = 20;
-    public const int PositionOffset = 21;
-    public const int Transform = 22;
-    public const int Rigidbody = 23;
-    public const int WorldPosition = 24;
+    public const int HumanoidLocomotionAnimator = 10;
+    public const int Building = 11;
+    public const int BuildingTypeId = 12;
+    public const int Gladiator = 13;
+    public const int Id = 14;
+    public const int Interactable = 15;
+    public const int ShowBuildingWindowInteractable = 16;
+    public const int MovementAvailable = 17;
+    public const int MovementDirection = 18;
+    public const int MovementSpeed = 19;
+    public const int Moving = 20;
+    public const int RigidbodyMovable = 21;
+    public const int PositionOffset = 22;
+    public const int Transform = 23;
+    public const int Rigidbody = 24;
+    public const int WorldPosition = 25;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -47,6 +48,7 @@ public static class GameComponentsLookup {
         "AnimationEventName",
         "AnimationHash",
         "AnimationStateEvent",
+        "HumanoidLocomotionAnimator",
         "Building",
         "BuildingTypeId",
         "Gladiator",
@@ -75,6 +77,7 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Gameplay.Animation.AnimationEventName),
         typeof(Gladiators.Gameplay.Animation.AnimationHash),
         typeof(Gladiators.Gameplay.Animation.AnimationStateEvent),
+        typeof(Gladiators.Gameplay.Animation.HumanoidLocomotionAnimatorComponent),
         typeof(Gladiators.Gameplay.Buildings.Building),
         typeof(Gladiators.Gameplay.Buildings.BuildingTypeIdComponent),
         typeof(Gladiators.Gameplay.Gladiator.Gladiator),

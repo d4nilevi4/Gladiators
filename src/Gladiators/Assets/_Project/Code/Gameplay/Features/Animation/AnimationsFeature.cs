@@ -7,6 +7,8 @@ public sealed class AnimationsFeature : CustomFeature
 {
     public AnimationsFeature(ISystemFactory systemFactory)
     {
+        Add(systemFactory.Create<AnimateHumanoidLocomotionMovementSystem>());
+        
         Add(systemFactory.Create<AnimationEventsCleanupSystem>());
         Add(systemFactory.Create<AnimationStateEventsCleanupSystem>());
     }

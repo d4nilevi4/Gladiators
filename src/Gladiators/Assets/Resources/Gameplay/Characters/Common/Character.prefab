@@ -185,6 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3340180040780093553}
   - component: {fileID: 7275557652229113829}
+  - component: {fileID: 236334546076973425}
   m_Layer: 0
   m_Name: '[Registrars]'
   m_TagString: Untagged
@@ -221,3 +222,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 7636922158973680656}
   Rigidbody: {fileID: 504554192769544759}
+--- !u!114 &236334546076973425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369954165459890063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edaf537c2a5545699ca6360aeab0ffc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 7636922158973680656}
+  Transform: {fileID: 5580130199611098981}
