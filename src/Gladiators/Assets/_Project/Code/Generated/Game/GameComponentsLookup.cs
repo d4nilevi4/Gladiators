@@ -19,13 +19,15 @@ public static class GameComponentsLookup {
     public const int Interactable = 8;
     public const int ShowBuildingWindowInteractable = 9;
     public const int MovementAvailable = 10;
-    public const int MovementSpeed = 11;
-    public const int PositionOffset = 12;
-    public const int Transform = 13;
-    public const int Rigidbody = 14;
-    public const int WorldPosition = 15;
+    public const int MovementDirection = 11;
+    public const int MovementSpeed = 12;
+    public const int RigidbodyMovable = 13;
+    public const int PositionOffset = 14;
+    public const int Transform = 15;
+    public const int Rigidbody = 16;
+    public const int WorldPosition = 17;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 18;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -39,7 +41,9 @@ public static class GameComponentsLookup {
         "Interactable",
         "ShowBuildingWindowInteractable",
         "MovementAvailable",
+        "MovementDirection",
         "MovementSpeed",
+        "RigidbodyMovable",
         "PositionOffset",
         "Transform",
         "Rigidbody",
@@ -58,7 +62,9 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Gameplay.Interactables.Interactable),
         typeof(Gladiators.Gameplay.Interactables.ShowBuildingWindowInteractable),
         typeof(Gladiators.Gameplay.Movement.MovementAvailable),
+        typeof(Gladiators.Gameplay.Movement.MovementDirection),
         typeof(Gladiators.Gameplay.Movement.MovementSpeed),
+        typeof(Gladiators.Gameplay.Movement.RigidbodyMovable),
         typeof(Gladiators.Gameplay.PositionOffset),
         typeof(Gladiators.Gameplay.TransformComponent),
         typeof(Gladiators.Gameplay.UnityPhysics.RigidbodyComponent),
