@@ -3,12 +3,12 @@ using Gladiators.Gameplay.Levels;
 
 namespace Gladiators.Infrastructure
 {
-    public class CityEnterState : IState
+    public class EnterCityState : IState
     {
         private readonly IGameStateMachine _stateMachine;
         private readonly ICityLevelDataProvider _cityLevelDataProvider;
 
-        public CityEnterState(
+        public EnterCityState(
             IGameStateMachine stateMachine,
             ICityLevelDataProvider cityLevelDataProvider
         )

@@ -2,12 +2,12 @@ using Cysharp.Threading.Tasks;
 
 namespace Gladiators.Infrastructure
 {
-    public class CityBattleState : IState
+    public class LoadCityState : IState
     {
         private readonly IGameStateMachine _stateMachine;
         private readonly ISceneLoader _sceneLoader;
 
-        public CityBattleState(IGameStateMachine stateMachine, ISceneLoader sceneLoader)
+        public LoadCityState(IGameStateMachine stateMachine, ISceneLoader sceneLoader)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
@@ -16,7 +16,7 @@ namespace Gladiators.Infrastructure
         public async UniTask Enter()
         {
             await _sceneLoader.LoadSceneAsync(Scenes.CITY);
-            await _stateMachine.Enter<CityEnterState>();
+            await _stateMachine.Enter<EnterCityState>();
         }
 
         public UniTask Exit() =>

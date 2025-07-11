@@ -53,8 +53,8 @@ namespace Gladiators.Infrastructure
             Container.BindInterfacesAndSelfTo<LoadProgressState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingMenuState>().AsSingle();
             Container.BindInterfacesAndSelfTo<MenuLoopState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<CityBattleState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<CityEnterState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoadCityState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnterCityState>().AsSingle();
             Container.BindInterfacesAndSelfTo<CityLoopState>().AsSingle();
         }
 
