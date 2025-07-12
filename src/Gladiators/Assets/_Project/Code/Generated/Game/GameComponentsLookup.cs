@@ -22,21 +22,23 @@ public static class GameComponentsLookup {
     public const int Building = 11;
     public const int BuildingTypeId = 12;
     public const int CameraLookPoint = 13;
-    public const int Gladiator = 14;
-    public const int Id = 15;
-    public const int Interactable = 16;
-    public const int ShowBuildingWindowInteractable = 17;
-    public const int MovementAvailable = 18;
-    public const int MovementDirection = 19;
-    public const int MovementSpeed = 20;
-    public const int Moving = 21;
-    public const int RigidbodyMovable = 22;
-    public const int PositionOffset = 23;
-    public const int Transform = 24;
-    public const int Rigidbody = 25;
-    public const int WorldPosition = 26;
+    public const int Enemy = 14;
+    public const int EnemyTypeId = 15;
+    public const int Gladiator = 16;
+    public const int Id = 17;
+    public const int Interactable = 18;
+    public const int ShowBuildingWindowInteractable = 19;
+    public const int MovementAvailable = 20;
+    public const int MovementDirection = 21;
+    public const int MovementSpeed = 22;
+    public const int Moving = 23;
+    public const int RigidbodyMovable = 24;
+    public const int PositionOffset = 25;
+    public const int Transform = 26;
+    public const int Rigidbody = 27;
+    public const int WorldPosition = 28;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -53,6 +55,8 @@ public static class GameComponentsLookup {
         "Building",
         "BuildingTypeId",
         "CameraLookPoint",
+        "Enemy",
+        "EnemyTypeId",
         "Gladiator",
         "Id",
         "Interactable",
@@ -83,6 +87,8 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Gameplay.Buildings.Building),
         typeof(Gladiators.Gameplay.Buildings.BuildingTypeIdComponent),
         typeof(Gladiators.Gameplay.Cameras.CameraLookPoint),
+        typeof(Gladiators.Gameplay.Enemies.Enemy),
+        typeof(Gladiators.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Gladiators.Gameplay.Gladiator.Gladiator),
         typeof(Gladiators.Gameplay.Id),
         typeof(Gladiators.Gameplay.Interactables.Interactable),
