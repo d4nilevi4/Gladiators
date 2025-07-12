@@ -1,13 +1,8 @@
 namespace Gladiators.Gameplay.Input;
 
-public class MainInput : IInput, IInitializable, IDisposable
+public class MainInput : IInput, IDisposable
 {
-    public PlayerInputActions Input { get; private set; }
-
-    public void Initialize()
-    {
-        Input = new PlayerInputActions();
-    }
+    public PlayerInputActions Input { get; } = new ();
 
     public void Dispose()
     {

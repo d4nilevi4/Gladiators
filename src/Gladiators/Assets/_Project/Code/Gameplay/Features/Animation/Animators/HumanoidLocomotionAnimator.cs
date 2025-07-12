@@ -10,7 +10,6 @@ namespace Gladiators.Gameplay.Animation
         
         public void SetIsMoving(bool isMoving)
         {
-            Debug.Log("SetIsMoving " + isMoving);
             Animator.SetBool(IsMoving, isMoving);
         }
         
@@ -22,8 +21,6 @@ namespace Gladiators.Gameplay.Animation
         
         public void SetMovement(Vector2 movement)
         {
-            Debug.Log("SetMovement " + movement);
-            
             Animator.SetFloat(MovementXHash, movement.x);
             Animator.SetFloat(MovementZHash, movement.y);
         }

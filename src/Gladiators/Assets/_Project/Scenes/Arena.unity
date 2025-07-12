@@ -1694,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[Editor Tools]'
       objectReference: {fileID: 0}
+    - target: {fileID: 7821522161174900494, guid: 52f319c15a224e84c8b30dc797735083, type: 3}
+      propertyPath: LoadCurrentScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9181850008869557649, guid: 52f319c15a224e84c8b30dc797735083, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

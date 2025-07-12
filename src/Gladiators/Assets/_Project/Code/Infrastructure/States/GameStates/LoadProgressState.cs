@@ -14,16 +14,33 @@ namespace Gladiators.Infrastructure
 
         public async UniTask Enter()
         {
-#if LOAD_CURRENT_SCENE && UNITY_EDITOR
+#if UNITY_EDITOR
             string key = SwitchToEntrySceneInEditor.CURRENT_SCENE_NAME_KEY;
             
             if (PlayerPrefs.HasKey(key))
             {
                 string sceneName = PlayerPrefs.GetString(key);
-                await _stateMachine.Enter<LoadingBattleState, string>(sceneName);
+                
+                if (sceneName == Scenes.CITY)
+                {
+                    await _stateMachine.Enter<LoadCityState>();
+                    
+                    PlayerPrefs.DeleteKey(key);
+                    PlayerPrefs.Save();
+                    return;
+                }
+
+                if (sceneName == Scenes.ARENA)
+                {
+                    await _stateMachine.Enter<LoadArenaState>();
+                    
+                    PlayerPrefs.DeleteKey(key);
+                    PlayerPrefs.Save();
+                    return;
+                }
+
                 PlayerPrefs.DeleteKey(key);
                 PlayerPrefs.Save();
-                return;
             }
 #endif
             await _stateMachine.Enter<LoadingMenuState>();
