@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using Gladiators.Common;
 using Gladiators.Gameplay;
 using Gladiators.Gameplay.Cameras;
+using Gladiators.Gameplay.Enemies;
 using Gladiators.Gameplay.Gladiator;
 using Gladiators.Gameplay.Input;
 using Gladiators.Gameplay.Levels;
@@ -118,7 +119,9 @@ namespace Gladiators.Infrastructure
         private void BindGameplayFactories()
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+            
             Container.Bind<IGladiatorFactory>().To<GladiatorFactory>().AsSingle();
+            Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
         }
 
         private void BindUIServices()

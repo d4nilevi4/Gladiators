@@ -26,7 +26,7 @@ public class GladiatorFactory : IGladiatorFactory
                 .AddWorldPosition(at)
                 .With(x => x.isGladiator = true)
                 .AddViewPrefab(_staticDataProvider.GetGladiatorPrefab(gladiatorTypeId))
-                .AddRigidbodyMovementComponents()
+                .AddRigidbodyMovementComponents(7f)
             ;
     }
 }

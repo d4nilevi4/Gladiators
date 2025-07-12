@@ -2,6 +2,7 @@
 using Gladiators.Common.Destruct;
 using Gladiators.Gameplay.Animation;
 using Gladiators.Gameplay.Cameras;
+using Gladiators.Gameplay.Enemies;
 using Gladiators.Gameplay.Gladiator;
 using Gladiators.Gameplay.Input;
 using Gladiators.Gameplay.Lifetime;
@@ -23,6 +24,7 @@ public class ArenaFeature : CustomFeature
         Add(systemFactory.Create<LifetimeFeature>());
         
         Add(systemFactory.Create<GladiatorFeature>());
+        Add(systemFactory.Create<EnemiesFeature>());
         
         Add(systemFactory.Create<MovementFeature>());
         
