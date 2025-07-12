@@ -4,6 +4,7 @@ using Gladiators.Gameplay.Animation;
 using Gladiators.Gameplay.Cameras;
 using Gladiators.Gameplay.Gladiator;
 using Gladiators.Gameplay.Input;
+using Gladiators.Gameplay.Lifetime;
 using Gladiators.Gameplay.Movement;
 using Gladiators.Infrastructure;
 
@@ -18,6 +19,8 @@ public class ArenaFeature : CustomFeature
         Add(systemFactory.Create<BindViewFeature>());
         
         Add(systemFactory.Create<ArenaInputFeature>());
+        
+        Add(systemFactory.Create<LifetimeFeature>());
         
         Add(systemFactory.Create<GladiatorFeature>());
         

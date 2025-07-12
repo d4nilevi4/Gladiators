@@ -28,17 +28,21 @@ public static class GameComponentsLookup {
     public const int Id = 17;
     public const int Interactable = 18;
     public const int ShowBuildingWindowInteractable = 19;
-    public const int MovementAvailable = 20;
-    public const int MovementDirection = 21;
-    public const int MovementSpeed = 22;
-    public const int Moving = 23;
-    public const int RigidbodyMovable = 24;
-    public const int PositionOffset = 25;
-    public const int Transform = 26;
-    public const int Rigidbody = 27;
-    public const int WorldPosition = 28;
+    public const int CurrentHp = 20;
+    public const int Dead = 21;
+    public const int MaxHp = 22;
+    public const int ProcessingDeath = 23;
+    public const int MovementAvailable = 24;
+    public const int MovementDirection = 25;
+    public const int MovementSpeed = 26;
+    public const int Moving = 27;
+    public const int RigidbodyMovable = 28;
+    public const int PositionOffset = 29;
+    public const int Transform = 30;
+    public const int Rigidbody = 31;
+    public const int WorldPosition = 32;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 33;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -61,6 +65,10 @@ public static class GameComponentsLookup {
         "Id",
         "Interactable",
         "ShowBuildingWindowInteractable",
+        "CurrentHp",
+        "Dead",
+        "MaxHp",
+        "ProcessingDeath",
         "MovementAvailable",
         "MovementDirection",
         "MovementSpeed",
@@ -93,6 +101,10 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Gameplay.Id),
         typeof(Gladiators.Gameplay.Interactables.Interactable),
         typeof(Gladiators.Gameplay.Interactables.ShowBuildingWindowInteractable),
+        typeof(Gladiators.Gameplay.Lifetime.CurrentHp),
+        typeof(Gladiators.Gameplay.Lifetime.Dead),
+        typeof(Gladiators.Gameplay.Lifetime.MaxHp),
+        typeof(Gladiators.Gameplay.Lifetime.ProcessingDeath),
         typeof(Gladiators.Gameplay.Movement.MovementAvailable),
         typeof(Gladiators.Gameplay.Movement.MovementDirection),
         typeof(Gladiators.Gameplay.Movement.MovementSpeed),
