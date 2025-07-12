@@ -1,6 +1,7 @@
 ﻿using Gladiators.Common;
 using Gladiators.Common.Destruct;
 using Gladiators.Gameplay.Animation;
+using Gladiators.Gameplay.Cameras;
 using Gladiators.Gameplay.Gladiator;
 using Gladiators.Gameplay.Input;
 using Gladiators.Gameplay.Movement;
@@ -23,6 +24,8 @@ public class ArenaFeature : CustomFeature
         Add(systemFactory.Create<MovementFeature>());
         
         Add(systemFactory.Create<AnimationsFeature>());
+        
+        Add(systemFactory.Create<ArenaCamerasFeature>());
             
         Add(systemFactory.Create<ProcessDestructedFeature>());
     }

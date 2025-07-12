@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8935209083938040733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7671993915750924508}
+  m_Layer: 0
+  m_Name: CameraLookPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7671993915750924508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935209083938040733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5649736992360508882}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &222786372006046391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54,7 +85,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5580130199611098981, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7671993915750924508}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1260598826214358668, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
       insertIndex: 2
@@ -62,6 +96,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8369954165459890063, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1946433249326773474}
+    - targetCorrespondingSourceObject: {fileID: 8369954165459890063, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5035474621756951797}
   m_SourcePrefab: {fileID: 100100000, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
 --- !u!1 &1326860887552693307 stripped
 GameObject:
@@ -81,6 +118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TypeId>k__BackingField: 0
+--- !u!4 &5649736992360508882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5580130199611098981, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
+  m_PrefabInstance: {fileID: 222786372006046391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7704730131374839463 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7636922158973680656, guid: 757d3d16dd20c6747a582237c9bb2336, type: 3}
@@ -111,3 +153,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 7704730131374839463}
   Animator: {fileID: 0}
+--- !u!114 &5035474621756951797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592714096573302072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18018b950a8c4976a55bf912cffe63b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 7704730131374839463}
+  CameraLookPoint: {fileID: 7671993915750924508}

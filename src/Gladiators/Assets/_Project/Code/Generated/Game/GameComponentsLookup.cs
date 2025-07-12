@@ -21,21 +21,22 @@ public static class GameComponentsLookup {
     public const int HumanoidLocomotionAnimator = 10;
     public const int Building = 11;
     public const int BuildingTypeId = 12;
-    public const int Gladiator = 13;
-    public const int Id = 14;
-    public const int Interactable = 15;
-    public const int ShowBuildingWindowInteractable = 16;
-    public const int MovementAvailable = 17;
-    public const int MovementDirection = 18;
-    public const int MovementSpeed = 19;
-    public const int Moving = 20;
-    public const int RigidbodyMovable = 21;
-    public const int PositionOffset = 22;
-    public const int Transform = 23;
-    public const int Rigidbody = 24;
-    public const int WorldPosition = 25;
+    public const int CameraLookPoint = 13;
+    public const int Gladiator = 14;
+    public const int Id = 15;
+    public const int Interactable = 16;
+    public const int ShowBuildingWindowInteractable = 17;
+    public const int MovementAvailable = 18;
+    public const int MovementDirection = 19;
+    public const int MovementSpeed = 20;
+    public const int Moving = 21;
+    public const int RigidbodyMovable = 22;
+    public const int PositionOffset = 23;
+    public const int Transform = 24;
+    public const int Rigidbody = 25;
+    public const int WorldPosition = 26;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -51,6 +52,7 @@ public static class GameComponentsLookup {
         "HumanoidLocomotionAnimator",
         "Building",
         "BuildingTypeId",
+        "CameraLookPoint",
         "Gladiator",
         "Id",
         "Interactable",
@@ -80,6 +82,7 @@ public static class GameComponentsLookup {
         typeof(Gladiators.Gameplay.Animation.HumanoidLocomotionAnimatorComponent),
         typeof(Gladiators.Gameplay.Buildings.Building),
         typeof(Gladiators.Gameplay.Buildings.BuildingTypeIdComponent),
+        typeof(Gladiators.Gameplay.Cameras.CameraLookPoint),
         typeof(Gladiators.Gameplay.Gladiator.Gladiator),
         typeof(Gladiators.Gameplay.Id),
         typeof(Gladiators.Gameplay.Interactables.Interactable),

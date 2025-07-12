@@ -1,12 +1,14 @@
 ﻿using Gladiators.Gameplay.Cameras;
 using Gladiators.Gameplay.Levels;
 using Gladiators.UI;
+using Unity.Cinemachine;
 
 namespace Gladiators.Infrastructure
 {
     public class ArenaLevelInitializer : MonoBehaviour
     {
         public Camera MainCamera;
+        public CinemachineCamera LookToGladiatorCamera;
         public Transform PlayerSpawnPoint;
         public Transform UIRoot;
         
@@ -29,6 +31,7 @@ namespace Gladiators.Infrastructure
         private void Awake()
         {
             _cameraProvider.SetMainCamera(MainCamera);
+            _cameraProvider.SetLookToGladiatorCamera(LookToGladiatorCamera);
             _uiRootProvider.SetUIRoot(UIRoot);
             _arenaLevelDataProvider.SetPlayerSpawnPosition(PlayerSpawnPoint.position);
         }
